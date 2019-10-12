@@ -1,5 +1,11 @@
 package cn.andios;
-
+/**
+ * 27,26,80,238
+ * @author LSD
+ *
+ * @datetime 2019年10月9日下午2:59:24
+ *
+ */
 public class Test27 {
 
 	public static int removeElementWithoutSwap(int [] nums,int val) {

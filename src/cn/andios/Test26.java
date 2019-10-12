@@ -1,5 +1,11 @@
 package cn.andios;
-
+/**
+ * 27,26,80,238
+ * @author LSD
+ *
+ * @datetime 2019年10月10日上午10:59:09
+ *
+ */
 public class Test26 {
 	public static int removeDupljcates(int[] nums) {  
     	/**
