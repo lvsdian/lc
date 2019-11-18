@@ -1,11 +1,24 @@
 package cn.andios;
 
 import java.util.Arrays;
-
+/**
+ * 88 75 215
+ * @author LSD
+ *
+ * @datetime 2019年10月20日下午3:28:46
+ *
+ */
 public class Test75 {
 
     public static void sortColors(int[] nums) {
-    	 //  0...lt  lt+1...gt-1  gt...nums.length
+    	/**
+    	 * 即三路快排
+    	 * 
+    	 * 将数组分为 <v  =v  >v 3个区间
+    	 * 
+    	 * 0...lt  lt+1...gt-1  gt...nums.length
+    	 */
+    	   
         int lt = -1;
         int gt = nums.length;
         int i = 0;

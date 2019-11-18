@@ -15,13 +15,23 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		int[] arr = new int[] {1,0,1,2,1,0};
-//		quickSortDoublePtr(arr, 0, arr.length - 1);
-		sonOfQuickSort3(arr, 0, arr.length - 1);
+		quickSortDoublePtr(arr, 0, arr.length - 1);
+//		sonOfQuickSort3(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(arr));
 	}
 
     
 	
+	private static void quickSortDoublePtr(int[] arr, int start, int end) {
+		if(start < end) {
+			int index = partition(arr,start,end);
+			quickSortDoublePtr(arr, start, index - 1);
+			quickSortDoublePtr(arr, index +1, end);
+		}
+	}
+
+
+
 	private static void sonOfQuickSort3(int[] arr, int start, int end) {
 		// start...lt  	lt+1...gt-1   	 gt...end
 		// l...lt 		lt+1...gt-1 	 gt...r
@@ -42,15 +52,6 @@ public class QuickSort {
 		}
 	}
 
-
- 
-	private static void quickSortDoublePtr(int[] arr, int start, int end) {
-		if(start < end) {
-			int index = partition(arr,start,end);
-			quickSortDoublePtr(arr, start, index - 1);
-			quickSortDoublePtr(arr, index + 1, end);
-		}
-	}
 
 	private static int partition(int[] arr, int start, int end) {
 		int index = arr[start];

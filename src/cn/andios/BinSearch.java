@@ -11,7 +11,8 @@ public class BinSearch {
 	private static int binSearch(int[] arr, int l, int r, int target) {
 		if(r < l)
 			return -1;
-		int mid = (l + r)/2;
+		//int mid = (l + r)/2; //这种写法当l、r足够大时，l+r可能会整型溢出
+		int mid = l + (r-l)/2;
 		if(arr[mid] == target)
 			return mid;
 		if(arr[mid] < target)

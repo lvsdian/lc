@@ -1,6 +1,6 @@
 package cn.andios;
 /**
- * 27,26,80,238
+ * 26,27,80,283
  * @author LSD
  *
  * @datetime 2019年10月8日下午8:24:11
@@ -9,21 +9,25 @@ package cn.andios;
 public class Test283 {
 	public static void moveZeroesDoublePointIfAllElementIs0(int[] nums) {
 		/**
-		   * 利用双指针i,j，开始都指向nums[0]，
+		 * 	利用双指针i,j，开始都指向nums[0]，
+		 * i从0到nums.length-1遍历nums,
+		 * j从0开始，记录nums中不为0的元素，因此j一定<=i
 		 * 
-		 * nums[i] == 0 
-		 * 	i后移,j不动
-		 * nums[i] != 0
-		 * 	将nums[i]与nums[j]交换,这样做就不用专门把后面的元素赋为0,考虑特殊情况，如果所有元素都为0
-		 * 	j ++;i ++
-		 * 直到i的位置到数组末尾：i == nums.length-1,nums[j,i)全赋值为0 
+		 * 	如果nums[i] == 0 
+		 * 		i后移,j不动
+		 * 	如果nums[i] != 0
+		 * 		将nums[i]与nums[j]交换(这样做就不用专门把后面的元素赋为0)
+		 * 		j ++;i ++
+		 * 	
+		 * 	但还需考虑特殊情况，如果nums中所有元素都不为0，那么nums[i]与nums[j]就不需要交换
+		 *	 直到i的位置到数组末尾：i == nums.length-1,nums[j,i)全为0 
 		 */
 		int i=0,j=0;
 		while(i<nums.length) {
 			if(nums[i] == 0) {
 				i ++;
 			}else {
-				//如果所有元素都不为0，那么i,j就不需要交换，此时
+				//如果所有元素都不为0，那么i,j就不需要交换，此时直接++
 				if(nums[j] == nums[i]) {
 					j ++;
 					i ++;
@@ -33,21 +37,20 @@ public class Test283 {
 					nums[i] = temp;
 					j ++;
 					i ++;
-				}
-				
+				}	
 			}
 		}
 	}
 	public static void moveZeroesDoublePointWithOutAssign0(int[] nums) {
 		/**
-		 * 利用双指针i,j，开始都指向nums[0]，
+		 * 	利用双指针i,j，开始都指向nums[0]，
 		 * 
 		 * nums[i] == 0 
 		 * 	i后移,j不动
 		 * nums[i] != 0
 		 * 	将nums[i]与nums[j]交换,这样做就不用专门把后面的元素赋为0
 		 * 	j ++;i ++
-		 * 直到i的位置到数组末尾：i == nums.length-1,nums[j,i)全赋值为0 
+		 * 	直到i的位置到数组末尾：i == nums.length-1,nums[j,i)全为0 
 		 */
 		int i=0,j=0;
 		while(i<nums.length) {
@@ -70,7 +73,7 @@ public class Test283 {
 		 * nums[i] == 0 
 		 * 	i后移,j不动
 		 * nums[i] != 0
-		 * 	nums[j] = nums[j]
+		 * 	nums[j] = nums[i]
 		 * 	j ++;i ++
 		 * 直到i的位置到数组末尾：i == nums.length-1,nums[j,i)全赋值为0
 		 * 
