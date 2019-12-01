@@ -16,8 +16,8 @@ import java.util.Set;
 public class Test438 {
 
 	/**
-	 * 因为不考字母顺序，只考虑包含相同的字母，所以用数组来存储，
-	 * 只记录各个字母存在的次数，而不管顺序
+	 * 	因为不考字母顺序，只考虑包含相同的字母，所以用数组来存储，
+	 * 	只记录各个字母存在的次数，而不管顺序
 	 */
     public static List<Integer> findAnagrams2(String s, String p) {    	
     	 List<Integer> list = new ArrayList<>();
