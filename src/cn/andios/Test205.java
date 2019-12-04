@@ -14,7 +14,7 @@ public class Test205 {
     public static boolean isIsomorphic(String s, String t) {
     	char[] sArr = s.toCharArray();
     	char[] tArr = t.toCharArray();
-    	Map<Integer,Integer> map = new HashMap();
+    	Map<Integer,Integer> map = new HashMap<>();
     	
     	for (int i = 0; i < tArr.length; i++) {
     		if(map.containsKey((int)sArr[i])) {

@@ -1,4 +1,4 @@
-26 27 283 80 			double pointer
+26 27 283 80 15			double pointer
 215 75 88 				extension of merge sort & quick sort (215可以用PriorityQueue)
 11 125 167 				collision(碰撞) pointer
 344 345 				'^' & double pointer
