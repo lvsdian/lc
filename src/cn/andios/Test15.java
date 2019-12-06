@@ -7,6 +7,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * 
+ * @author LSD
+ *
+ * @datetime 2019年12月4日下午3:52:13
+ *
+ */
 public class Test15 {
     /**
      * 	双指针
@@ -70,7 +77,7 @@ public class Test15 {
     }
     public static void main(String[] args) {
 		List<List<Integer>> threeSum1 = threeSum1(new int [] {-1,0,1,2,-1});
-		List<List<Integer>> threeSum2 = threeSum2(new int [] {-1,0,1,2,-1});
+		List<List<Integer>> threeSum2 = threeSum2(new int [] {0,0,0});
 		threeSum2.forEach(item->item.forEach(System.out::print));
 	}
 }
