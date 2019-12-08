@@ -20,7 +20,7 @@ public class Test18 {
 	 * 	因为，如果i=0不排除，nums[i-1]就会越界
 	 * 	如果j=i+1不排除，就会漏掉
 	 * 
-	 * 	41ms，还有需要优化的地方：
+	 * 	41ms，还有需要优化的地方，如下：
 	 */
     public static List<List<Integer>> fourSum(int[] nums, int target) {
     	List<List<Integer>> res = new ArrayList<>();
