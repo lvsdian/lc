@@ -12,6 +12,7 @@
 451						hashmap、PriorityQueue
 49						hashmap(字母异位词问题可以用数组计数字符来解决，也可以转成char数组再排序，排完序直接比较)
 220						treeSet
+206				反转链表
 遍历map：
 	map.forEach((k,j)->{
 		System.out.println(k+""+j);
