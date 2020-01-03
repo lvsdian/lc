@@ -8,78 +8,38 @@ package cn.andios;
  */
 public class Test2 {
     public static ListNode6 addTwoNumbers(ListNode6 l1, ListNode6  l2) {
-        long num1 = 0 ,num2 = 0,sum = 0;
-        
-        ListNode6 head1 = new ListNode6(Integer.MAX_VALUE);
-        ListNode6 head2 = new ListNode6(Integer.MAX_VALUE);
-        
-        ListNode6 head = new ListNode6(Integer.MAX_VALUE);
-        ListNode6 tail = head;
-        
-        ListNode6 newNode;
-        //将l1反过来，head1才是l1真正表示的数
-        while(l1 != null) {
-        	newNode = l1;
-        	l1 = l1.next;
-        	newNode.next = head1.next;
-        	head1.next = newNode;
-        	
-        }
-        //将l2反过来，head2才是l2真正表示的数
-        while(l2 != null) {
-        	newNode = l2;
-        	l2 = l2.next;
-        	newNode.next = head2.next;
-        	head2.next = newNode;
-        	
-        }
-        //将head1表示的数变为long型
-        head1 = head1.next;
-        while(head1 != null) {
-        	num1 = num1*10;
-        	num1 += head1.val;
-        	head1 = head1.next;
-        }
-        //将head2表示的数变为long型
-        head2 = head2.next;
-        while(head2 != null) {
-        	num2 = num2*10;
-        	num2 += head2.val;
-        	head2 = head2.next;
-        }
-        
-        sum = num1 + num2;
-        
-        if(sum  == 0) {
-        	head.next = new ListNode6(0);
-        	return head.next;
-        }
-        while(sum != 0) {
-        	newNode = new ListNode6((int)sum % 10);
-        	tail.next = newNode;
-        	tail = tail.next;
-        	
-        	sum /= 10;
-        }
-        
-//        while(head1 != null) {
-//        	System.out.print(head1.val+"\t");
-//        	head1 = head1.next;
-//        }
-//        System.out.println();
-//        while(head2 != null) {
-//        	System.out.print(head2.val+"\t");
-//        	head2 = head2.next;
-//        }
-        
-//        System.out.println(num1);
-//        System.out.println(num2);
-        
-//        head = head.next;
-//        while(head != null) {
-//        	System.out.print(head.val+"\t");
-//        	head = head.next;
-//        }
+    	ListNode6 head = new ListNode6(Integer.MAX_VALUE);
+    	ListNode6 tail = head;
+    	
+    	ListNode6 newNode = null;
+    	//i表示进位，取1或0
+    	int i = 0;
+    	//sum表示两个链表的两个节点的val相加的值，sum=前一次相加的进位+本次相加的两个节点的val之和
+    	int sum = 0;
+    	while(l1 != null || l2 != null) {
+    		//如果一个链表已经遍历完了，另一个还没，就把这个置为0
+    		if(l1 == null) {
+    			l1 = new ListNode6(0);
+    		}
+    		if(l2 == null) {
+    			l2 = new ListNode6(0);
+    		}
+    		//计算sum
+    		sum = l1.val + l2.val + i;
+    		//因为sum可能会产生进位，所以取sum % 10之后的数
+    		newNode = new ListNode6(sum % 10);
+    		tail.next = newNode;
+    		tail = tail.next;
+    		
+    		//取进位
+    		i = sum / 10;
+    		l1 = l1.next;
+    		l2 = l2.next;
+    	}
+    	//遍历完后，可能还存在进位
+    	if(i != 0) {
+    		tail.next = new ListNode6(i);
+    	}
         return head.next;
     }
 	public static void main(String[] args) {
@@ -87,12 +47,12 @@ public class Test2 {
 		ListNode6 head1 = new ListNode6(9);
 		ListNode6 tail1 = head1;
 		
-		ListNode6 head2 = new ListNode6(5);
+		ListNode6 head2 = new ListNode6(1);
 		ListNode6 tail2 = head2;
 		
 		ListNode6 newNode;
 		
-		int[] arr = new int[] {1,9,9,9,9,9,9,9,9,9};
+		int[] arr = new int[] {9,9,9,9,9,9,9,9,9};
 		
 //		for (int i = 0; i < arr.length-2; i++) {
 //			newNode = new ListNode6(arr[i]);
@@ -104,12 +64,12 @@ public class Test2 {
 			tail2.next = newNode;
 			tail2 = tail2.next;		
 		}
-		//002  0  [9]
+		//[0]  [9]
 //		while(head1 != null) {
 //			System.out.print(head1.val+"\t");
 //			head1 = head1.next;
 //		}
-		//653  0  [1,9,9,9,9,9,9,9,9,9]
+		//[0]  [1,9,9,9,9,9,9,9,9,9]
 //		System.out.println();
 //		while(head2 != null) {
 //			System.out.print(head2.val+"\t");

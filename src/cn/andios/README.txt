@@ -16,6 +16,7 @@
 92					反转一个链表的一部分
 86					将一个链表分成分成两个部分(<target在前，>=target在后)
 328					将奇索引位节点排在前，偶索引位节点排在后，解法类似86
+2					两个链表的val相加
 遍历map：
 	map.forEach((k,j)->{
 		System.out.println(k+""+j);
