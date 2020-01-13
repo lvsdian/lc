@@ -10,7 +10,7 @@ import java.util.Set;
  * 
  * @author LSD
  *
- * @datetime 2019Äê12ÔÂ10ÈÕÉÏÎç11:48:30
+ * @datetime 2019å¹´12æœˆ10æ—¥ä¸Šåˆ11:48:30
  *
  */
 public class Test447 {
@@ -18,9 +18,9 @@ public class Test447 {
     public static int numberOfBoomerangs(int[][] points) {
     	int res=0;
         Map<Integer,Integer> map = new HashMap<>();
-    	//	±éÀúpoints
+    	//	éå†points
     	for (int i = 0; i < points.length; i++) {   		
-    		//	ÓÃÒ»¸ömap£¬¼üÎªiµãµ½ÆäËûµãµÄ¾àÀë£¬ÖµÎªÕâ¸ö¾àÀë³öÏÖµÄ´ÎÊı
+    		//	ç”¨ä¸€ä¸ªmapï¼Œé”®ä¸ºiç‚¹åˆ°å…¶ä»–ç‚¹çš„è·ç¦»ï¼Œå€¼ä¸ºè¿™ä¸ªè·ç¦»å‡ºç°çš„æ¬¡æ•°
         	map.clear();
         	
 			for (int j = 0; j < points.length; j++) {
@@ -28,9 +28,9 @@ public class Test447 {
 					map.put(dis(points[i],points[j]),map.getOrDefault(dis(points[i],points[j]), 0)+1);
 			}	
 			
-			//	±éÀúmap£¬È¡ËüµÄvalue
-	    	//	±ÈÈçkey=2£¬value=3¼´±íÊ¾Àëi¾àÀëÎª2µÄµãÓĞ3¸ö£¬ÄÇÃ´kÓĞ3ÖÖÈ¡ÖµÇé¿ö£¬jÓĞ2ÖÖÈ¡ÖµÇé¿ö
-	    	//	±ÈÈçkey=5£¬value=7¼´±íÊ¾Àëi¾àÀëÎª5µÄµãÓĞ7¸ö£¬ÄÇÃ´kÓĞ7ÖÖÈ¡ÖµÇé¿ö£¬jÓĞ6ÖÖÈ¡ÖµÇé¿ö
+			//	éå†mapï¼Œå–å®ƒçš„value
+	    	//	æ¯”å¦‚key=2ï¼Œvalue=3å³è¡¨ç¤ºç¦»iè·ç¦»ä¸º2çš„ç‚¹æœ‰3ä¸ªï¼Œé‚£ä¹ˆkæœ‰3ç§å–å€¼æƒ…å†µï¼Œjæœ‰2ç§å–å€¼æƒ…å†µ
+	    	//	æ¯”å¦‚key=5ï¼Œvalue=7å³è¡¨ç¤ºç¦»iè·ç¦»ä¸º5çš„ç‚¹æœ‰7ä¸ªï¼Œé‚£ä¹ˆkæœ‰7ç§å–å€¼æƒ…å†µï¼Œjæœ‰6ç§å–å€¼æƒ…å†µ
 	    	Set<Entry<Integer, Integer>> entrySet = map.entrySet();
 	    	Iterator<Entry<Integer, Integer>> iterator = entrySet.iterator();
 	    	while (iterator.hasNext()) {

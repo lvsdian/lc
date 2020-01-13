@@ -10,13 +10,13 @@ import java.util.Set;
  * 
  * @author LSD
  *
- * @datetime 2019Äê11ÔÂ27ÈÕÏÂÎç9:09:46
+ * @datetime 2019å¹´11æœˆ27æ—¥ä¸‹åˆ9:09:46
  *
  */
 public class Test242 {
 
 	/**
-	 * Êı×é
+	 * æ•°ç»„
 	 * @param s
 	 * @param t
 	 * @return
@@ -49,12 +49,12 @@ public class Test242 {
     	Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     	
     	for (int i = 0; i < s.length(); i++) {
-    		//sÖĞ×Ö·û·Å½øÈ¥
+    		//sä¸­å­—ç¬¦æ”¾è¿›å»
 			map.put((int) s.charAt(i),map.getOrDefault((int)s.charAt(i), 0)+1);
-			//¼õÈ¥tÖĞ×Ö·û
+			//å‡å»tä¸­å­—ç¬¦
         	map.put((int)t.charAt(i), map.getOrDefault((int)t.charAt(i),0)-1);			
 		}						
-    	//Èç¹ûtÃ»°Ñs¼õÍê¾Í·µ»Øfalse
+    	//å¦‚æœtæ²¡æŠŠså‡å®Œå°±è¿”å›false
 		for (int i = 0; i < s.length(); i++) {
 			if(map.get((int)s.charAt(i))!=0) {
 				return false;

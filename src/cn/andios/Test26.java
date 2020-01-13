@@ -6,19 +6,19 @@ import java.util.Arrays;
  * 26,27,80,283
  * @author LSD
  *
- * @datetime 2019Äê10ÔÂ10ÈÕÉÏÎç10:59:09
+ * @datetime 2019å¹´10æœˆ10æ—¥ä¸Šåˆ10:59:09
  *
  */
 public class Test26 {
 	public static int removeDupljcates(int[] nums) {  
     	/**
-    	 *	»¹ÊÇË«Ö¸Õë£¬i,j
-    	 *	i´Ó0µ½nums.length±éÀúnums,
-    	 *	j´Ó0¿ªÊ¼£¬¼ÇÂ¼É¾³ıÖØ¸´ÔªËØºóµÄÊı×éÔªËØ£¬Òò´Ë£¬jÒ»¶¨<=i
+    	 *	è¿˜æ˜¯åŒæŒ‡é’ˆï¼Œi,j
+    	 *	iä»0åˆ°nums.lengthéå†nums,
+    	 *	jä»0å¼€å§‹ï¼Œè®°å½•åˆ é™¤é‡å¤å…ƒç´ åçš„æ•°ç»„å…ƒç´ ï¼Œå› æ­¤ï¼Œjä¸€å®š<=i
     	 * 
-    	 * j´Ó0Î»ÖÃ¿ªÊ¼£¬i´Ó1Î»ÖÃ¿ªÊ¼
-    	 * iÃ¿´ÎÕÒµ½ÓëjÎ»ÖÃ²»Í¬µÄÖµÊ±£¬¾Í°ÑËü¸³¸øjµÄÏÂÒ»¸öÎ»
-    	 * iÃ¿´Î¶¼»á++,jÖ»ÓĞ±»¸³ÖµÊÇ²Å»á++
+    	 * jä»0ä½ç½®å¼€å§‹ï¼Œiä»1ä½ç½®å¼€å§‹
+    	 * iæ¯æ¬¡æ‰¾åˆ°ä¸jä½ç½®ä¸åŒçš„å€¼æ—¶ï¼Œå°±æŠŠå®ƒèµ‹ç»™jçš„ä¸‹ä¸€ä¸ªä½
+    	 * iæ¯æ¬¡éƒ½ä¼š++,jåªæœ‰è¢«èµ‹å€¼æ˜¯æ‰ä¼š++
     	 * 
     	 */
 		if(nums == null || nums.length == 0)
@@ -36,7 +36,7 @@ public class Test26 {
 	public static void majn(String[] args) {
 		int [] array = {0,0,1,1,1,2,2,3,3,4};
 		int len = removeDupljcates(array);
-		System.out.println("len£º" + len);
+		System.out.println("lenï¼š" + len);
 		for (int i = 0; i < len; i++) {
 			System.out.print(array[i]+"\t");
 		}

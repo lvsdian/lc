@@ -7,13 +7,13 @@ import java.util.Map;
  * 
  * @author LSD
  *
- * @datetime 2019Äê12ÔÂ7ÈÕÏÂÎç9:46:21
+ * @datetime 2019å¹´12æœˆ7æ—¥ä¸‹åˆ9:46:21
  *
  */
 public class Test454 {
 	
 	/**
-	 * A¡¢B¡¢C¡¢D·ÖÎªÁ½×é£¬A+B=-(C+D)
+	 * Aã€Bã€Cã€Dåˆ†ä¸ºä¸¤ç»„ï¼ŒA+B=-(C+D)
 	 */
     public static int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
     	

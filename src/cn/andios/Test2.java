@@ -3,7 +3,7 @@ package cn.andios;
  * 
  * @author LSD
  *
- * @datetime 2020Äê1ÔÂ1ÈÕÏÂÎç8:06:54
+ * @datetime 2020å¹´1æœˆ1æ—¥ä¸‹åˆ8:06:54
  *
  */
 public class Test2 {
@@ -12,38 +12,38 @@ public class Test2 {
     	ListNode6 tail = head;
     	
     	ListNode6 newNode = null;
-    	//i±íÊ¾½øÎ»£¬È¡1»ò0
+    	//iè¡¨ç¤ºè¿›ä½ï¼Œå–1æˆ–0
     	int i = 0;
-    	//sum±íÊ¾Á½¸öÁ´±íµÄÁ½¸ö½ÚµãµÄvalÏà¼ÓµÄÖµ£¬sum=Ç°Ò»´ÎÏà¼ÓµÄ½øÎ»+±¾´ÎÏà¼ÓµÄÁ½¸ö½ÚµãµÄvalÖ®ºÍ
+    	//sumè¡¨ç¤ºä¸¤ä¸ªé“¾è¡¨çš„ä¸¤ä¸ªèŠ‚ç‚¹çš„valç›¸åŠ çš„å€¼ï¼Œsum=å‰ä¸€æ¬¡ç›¸åŠ çš„è¿›ä½+æœ¬æ¬¡ç›¸åŠ çš„ä¸¤ä¸ªèŠ‚ç‚¹çš„valä¹‹å’Œ
     	int sum = 0;
     	while(l1 != null || l2 != null) {
-    		//Èç¹ûÒ»¸öÁ´±íÒÑ¾­±éÀúÍêÁË£¬ÁíÒ»¸ö»¹Ã»£¬¾Í°ÑÕâ¸öÖÃÎª0
+    		//å¦‚æœä¸€ä¸ªé“¾è¡¨å·²ç»éå†å®Œäº†ï¼Œå¦ä¸€ä¸ªè¿˜æ²¡ï¼Œå°±æŠŠè¿™ä¸ªç½®ä¸º0
     		if(l1 == null) {
     			l1 = new ListNode6(0);
     		}
     		if(l2 == null) {
     			l2 = new ListNode6(0);
     		}
-    		//¼ÆËãsum
+    		//è®¡ç®—sum
     		sum = l1.val + l2.val + i;
-    		//ÒòÎªsum¿ÉÄÜ»á²úÉú½øÎ»£¬ËùÒÔÈ¡sum % 10Ö®ºóµÄÊı
+    		//å› ä¸ºsumå¯èƒ½ä¼šäº§ç”Ÿè¿›ä½ï¼Œæ‰€ä»¥å–sum % 10ä¹‹åçš„æ•°
     		newNode = new ListNode6(sum % 10);
     		tail.next = newNode;
     		tail = tail.next;
     		
-    		//È¡½øÎ»
+    		//å–è¿›ä½
     		i = sum / 10;
     		l1 = l1.next;
     		l2 = l2.next;
     	}
-    	//±éÀúÍêºó£¬¿ÉÄÜ»¹´æÔÚ½øÎ»
+    	//éå†å®Œåï¼Œå¯èƒ½è¿˜å­˜åœ¨è¿›ä½
     	if(i != 0) {
     		tail.next = new ListNode6(i);
     	}
         return head.next;
     }
 	public static void main(String[] args) {
-		//¹¹½¨Á½¸öÁ´±í
+		//æ„å»ºä¸¤ä¸ªé“¾è¡¨
 		ListNode6 head1 = new ListNode6(9);
 		ListNode6 tail1 = head1;
 		
@@ -84,7 +84,7 @@ public class Test2 {
 	}
 }
 /**
- * ½ÚµãÀà
+ * èŠ‚ç‚¹ç±»
  */
 class ListNode6 {    
 	int val;

@@ -4,7 +4,7 @@ package cn.andios;
  * 209 3 438 76
  * @author LSD
  *
- * @datetime 2019Äê11ÔÂ20ÈÕÏÂÎç7:58:05
+ * @datetime 2019å¹´11æœˆ20æ—¥ä¸‹åˆ7:58:05
  *
  */
 public class Test76 {
@@ -17,16 +17,16 @@ public class Test76 {
         if(m<n){
             return "";
         }
-        //×ª»¯³ÉÊı×é£¬ÌáÉı²éÕÒËÙ¶È
+        //è½¬åŒ–æˆæ•°ç»„ï¼Œæå‡æŸ¥æ‰¾é€Ÿåº¦
         char[] S=s.toCharArray();
         char[] T=t.toCharArray();
-        int[] map=new int[256];//ÀûÓÃASSIIÂë×öÓ³Éä£¬±ÈhashmapĞ§ÂÊ¸ß
+        int[] map=new int[256];//åˆ©ç”¨ASSIIç åšæ˜ å°„ï¼Œæ¯”hashmapæ•ˆç‡é«˜
         for(int i=0;i<n;i++){
             map[T[i]]++;
         }
         int start=-1;
-        int L=0,R=0;//»¬¶¯´°¿Ú[L,R]
-        int count=0;//±£´æ´°¿ÚÀïÒÑ¾­ÕÒµ½ÁË¶àÉÙ×Ö·û
+        int L=0,R=0;//æ»‘åŠ¨çª—å£[L,R]
+        int count=0;//ä¿å­˜çª—å£é‡Œå·²ç»æ‰¾åˆ°äº†å¤šå°‘å­—ç¬¦
         int min=m+1;
         while(L<=m-n&&R<m){
             map[S[R]]--;
@@ -34,15 +34,15 @@ public class Test76 {
                 count++;
             }
             if(count==n){
-                while(map[S[L]]<0){//L¾¡Á¿Íù×óÒÆ¶¯
+                while(map[S[L]]<0){//Lå°½é‡å¾€å·¦ç§»åŠ¨
                     map[S[L]]++;
                     L++;
                 }
-                if(R-L<min){//¼ÇÂ¼Î»ÖÃ
+                if(R-L<min){//è®°å½•ä½ç½®
                     min=R-L;
                     start=L;
                 }
-	            map[S[L++]]++;//L¼ÌĞøÓÒÒÆÒ»Î»£¬½øĞĞÏÂ´ÎÑ°ÕÒ
+	            map[S[L++]]++;//Lç»§ç»­å³ç§»ä¸€ä½ï¼Œè¿›è¡Œä¸‹æ¬¡å¯»æ‰¾
 	            count--;
             }
             R++;
@@ -55,10 +55,10 @@ public class Test76 {
 	/**
 	 * 164ms
 	 * 
-	 * 1.Èç¹ûsµÄ´°¿ÚÖĞ°üº¬tËùÓĞÔªËØ£¬ÄÇÃ´´°¿Ú×îĞ¡³¤¶ÈÎªt.length(),ËùÒÔ³õÊ¼Ê±£¬iÎª0£¬jÎªt.length()-1,¶ø²»ÊÇiÎª0£¬jÎª-1¡£
-	 * 2.Óë438Ò»Ñù£¬»¹ÊÇÓÃÊı×éÀ´¼ÇÂ¼tºÍ´°¿ÚÄÚµÄÔªËØ¡£Í¬Ê±½â¾öÁËË³ĞòºÍÖØ¸´µÄÎÊÌâ¡£
-	 * 3.Èç¹û´°¿ÚÖĞ°üº¬t,ÄÇÃ´iÓÒÒÆ£¬ËõĞ¡´°¿Ú·¶Î§
-	 * 	  Èç¹û´°¿ÚÖĞ²»°üº¬t,ÄÇÃ´jÓÒÒÆ£¬Ôö´ó´°¿Ú·¶Î§
+	 * 1.å¦‚æœsçš„çª—å£ä¸­åŒ…å«tæ‰€æœ‰å…ƒç´ ï¼Œé‚£ä¹ˆçª—å£æœ€å°é•¿åº¦ä¸ºt.length(),æ‰€ä»¥åˆå§‹æ—¶ï¼Œiä¸º0ï¼Œjä¸ºt.length()-1,è€Œä¸æ˜¯iä¸º0ï¼Œjä¸º-1ã€‚
+	 * 2.ä¸438ä¸€æ ·ï¼Œè¿˜æ˜¯ç”¨æ•°ç»„æ¥è®°å½•tå’Œçª—å£å†…çš„å…ƒç´ ã€‚åŒæ—¶è§£å†³äº†é¡ºåºå’Œé‡å¤çš„é—®é¢˜ã€‚
+	 * 3.å¦‚æœçª—å£ä¸­åŒ…å«t,é‚£ä¹ˆiå³ç§»ï¼Œç¼©å°çª—å£èŒƒå›´
+	 * 	  å¦‚æœçª—å£ä¸­ä¸åŒ…å«t,é‚£ä¹ˆjå³ç§»ï¼Œå¢å¤§çª—å£èŒƒå›´
 	 * 
 	 */
 	public static String minWindow2(String s, String t) {
@@ -74,29 +74,29 @@ public class Test76 {
 			sArr[s.charAt(k) - 'A']++;
 		}
 		while (i < s.length() - t.length() + 1) {
-			//Èç¹ûtÖĞÃ»ÓĞ´°¿Ú×ó±ß½çiË÷Òı¶ÔÓ¦µÄÖµ£¬iÖ±½Ó++¼´¿É
+			//å¦‚æœtä¸­æ²¡æœ‰çª—å£å·¦è¾¹ç•Œiç´¢å¼•å¯¹åº”çš„å€¼ï¼Œiç›´æ¥++å³å¯
 			if (t.indexOf(s.charAt(i)) == -1) {
 				sArr[s.charAt(i)- 'A']--;
 				i++;
-				//i++ºó£¬Èç¹û´°¿Ú³¤¶ÈĞ¡ÓÚt.length()£¬Ôò´°¿ÚÔªËØÒ»¶¨²»°üº¬t,ÄÇÃ´jÒ²++£¬
+				//i++åï¼Œå¦‚æœçª—å£é•¿åº¦å°äºt.length()ï¼Œåˆ™çª—å£å…ƒç´ ä¸€å®šä¸åŒ…å«t,é‚£ä¹ˆjä¹Ÿ++ï¼Œ
 				if(j < s.length()-1 && j-i+1<t.length()){
 					j++;
 					sArr[s.charAt(j)- 'A']++;
 				}
 			} else {
-				//´°¿ÚÖĞ°üº¬t
+				//çª—å£ä¸­åŒ…å«t
 				if (isContain(tArr, sArr)) {
-					//¸üĞÂstring
+					//æ›´æ–°string
 					string = s.substring(i, j+1).length() < string.length() ? s.substring(i, j+1) : string;
-					//iÓÒÒÆ£¬ËõĞ¡´°¿Ú
+					//iå³ç§»ï¼Œç¼©å°çª—å£
 					sArr[s.charAt(i)- 'A']--;
 					i++;				
 				}else{
-					//´°¿ÚÖĞ²»°üº¬tÊ±£¬ÔÚ±£Ö¤j²»Ô½½çµÄÇ°ÌáÏÂ£¬jÓÒÒÆ
+					//çª—å£ä¸­ä¸åŒ…å«tæ—¶ï¼Œåœ¨ä¿è¯jä¸è¶Šç•Œçš„å‰æä¸‹ï¼Œjå³ç§»
 					if (j < s.length()-1){
 						j++;
 						sArr[s.charAt(j)- 'A']++;
-					//jÔ½½çÊ±£¬Ö±½ÓÍË³öÑ­»·
+					//jè¶Šç•Œæ—¶ï¼Œç›´æ¥é€€å‡ºå¾ªç¯
 					}else {
 						break;
 					}	
@@ -118,7 +118,7 @@ public class Test76 {
 		return true;
 	}
 	/**
-	 * ³¬Ê±
+	 * è¶…æ—¶
 	 */
     public static String minWindow1(String s, String t) {
     	if(s == null || s.length() < t.length()|| t.length() == 0) {
@@ -154,7 +154,7 @@ public class Test76 {
     	}
         return string;
     }
-    //sÖĞÊÇ·ñ°üº¬t
+    //sä¸­æ˜¯å¦åŒ…å«t
     public static boolean isContain(int [] t,String s) {
     	int [] sArr = new int[58];
     	for (int k = 0; k < s.length(); k++) {

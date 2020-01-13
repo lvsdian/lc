@@ -1,14 +1,13 @@
 package cn.andios;
 
 import java.util.Arrays;
-import java.util.Random;
 
 /**
- * 	Ë«Ö¸Õë¡¢ÍÚ¿Ó¡¢ÈıÂ·¿ìÅÅ
+ * 	åŒæŒ‡é’ˆã€æŒ–å‘ã€ä¸‰è·¯å¿«æ’
  * 
  * @author LSD
  *
- * @datetime 2019Äê10ÔÂ13ÈÕÏÂÎç6:02:49
+ * @datetime 2019å¹´10æœˆ13æ—¥ä¸‹åˆ6:02:49
  *
  */
 public class QuickSort {
@@ -19,8 +18,6 @@ public class QuickSort {
 //		sonOfQuickSort3(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(arr));
 	}
-
-    
 	
 	private static void quickSortDoublePtr(int[] arr, int start, int end) {
 		if(start < end) {
@@ -29,7 +26,6 @@ public class QuickSort {
 			quickSortDoublePtr(arr, index +1, end);
 		}
 	}
-
 
 
 	private static void sonOfQuickSort3(int[] arr, int start, int end) {
@@ -52,7 +48,6 @@ public class QuickSort {
 		}
 	}
 
-
 	private static int partition(int[] arr, int start, int end) {
 		int index = arr[start];
 		int left = start,right = end;
@@ -72,13 +67,9 @@ public class QuickSort {
 		return left;
 	}
 
-
-
 	private static void swap(int [] arr,int a,int b) {
 		int temp = arr[a];
 		arr[a] = arr[b];
 		arr[b] = temp;
 	}
-
-	
 }

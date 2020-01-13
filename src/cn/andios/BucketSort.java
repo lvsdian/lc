@@ -9,13 +9,13 @@ import java.util.List;
 /** 
  * @author LSD
  *
- * @datetime 2019Äê12ÔÂ3ÈÕÏÂÎç7:05:53
+ * @datetime 2019å¹´12æœˆ3æ—¥ä¸‹åˆ7:05:53
  *
  */
 public class BucketSort {
 
 	public static double[] bucketSort(double[] array) {
-		// 1.µÃµ½ÊıÁĞµÄ×î´óÖµºÍ×îĞ¡Öµ		
+		// 1.å¾—åˆ°æ•°åˆ—çš„æœ€å¤§å€¼å’Œæœ€å°å€¼		
 		double max = array[0];
 		double min = array[0];
 		for (int i = 1; i < array.length; i++) {
@@ -26,24 +26,24 @@ public class BucketSort {
 				min = array[i];
 			}
 		} 
-		// 2.³õÊ¼»¯Í° £¬Í°¸öÊıµÈÓÚÊı×éÔªËØµÄ¸öÊı		
+		// 2.åˆå§‹åŒ–æ¡¶ ï¼Œæ¡¶ä¸ªæ•°ç­‰äºæ•°ç»„å…ƒç´ çš„ä¸ªæ•°		
 		int bucketNum = array.length; 
-		// Ã¿¸öÍ°ÊÇÒ»¸öLinkedList,¶à¸öÍ°´®³ÉÒ»¸öArrayList
+		// æ¯ä¸ªæ¡¶æ˜¯ä¸€ä¸ªLinkedList,å¤šä¸ªæ¡¶ä¸²æˆä¸€ä¸ªArrayList
 		List<LinkedList<Double>> bucketList = new  ArrayList<LinkedList<Double>>(bucketNum); 
 		for (int i = 0; i < bucketNum; i++) { 
 			bucketList.add(new  LinkedList<Double>()); 
 		} 
-		// 3.±éÀúÔ­Ê¼Êı×é£¬½«Ã¿¸öÔªËØ·ÅÈëÍ°ÖĞ 		
+		// 3.éå†åŸå§‹æ•°ç»„ï¼Œå°†æ¯ä¸ªå…ƒç´ æ”¾å…¥æ¡¶ä¸­ 		
 		for (int i = 0; i < array.length; i++) { 
 			int num = (int) ((array[i] - min) * (bucketNum - 1) / (max-min)); 
 			bucketList.get(num).add(array[i]); 
 		} 
-		// 4.¶ÔÃ¿¸öÍ¨ÄÚ²¿½øĞĞÅÅĞò 		
+		// 4.å¯¹æ¯ä¸ªé€šå†…éƒ¨è¿›è¡Œæ’åº 		
 		for (int i = 0; i < bucketList.size(); i++) { 
-			// JDKµ×²ã²ÉÓÃÁË¹é²¢ÅÅĞò»ò¹é²¢µÄÓÅ»¯°æ±¾ 
+			// JDKåº•å±‚é‡‡ç”¨äº†å½’å¹¶æ’åºæˆ–å½’å¹¶çš„ä¼˜åŒ–ç‰ˆæœ¬ 
 			Collections.sort(bucketList.get(i)); 
 		} 
-		// 5.Êä³öÈ«²¿ÔªËØ 		
+		// 5.è¾“å‡ºå…¨éƒ¨å…ƒç´  		
 		double[] sortedArray = new  double[array.length]; 
 		int index = 0; 
 		for (LinkedList<Double> list : bucketList) { 
@@ -52,10 +52,9 @@ public class BucketSort {
 				index++; 
 			} 
 		} 
-		//×ÜÊ±¼ä¸´ÔÓ¶È£º×îºÃÎªo(n)
+		//æ€»æ—¶é—´å¤æ‚åº¦ï¼šæœ€å¥½ä¸ºo(n)
 		return sortedArray; 
 	}
-
 	public static void main(String[] args) {
 		double[] array = new  double[] { 4.12, 6.421, 0.0023, 3.0, 2.123, 8.122, 4.12, 10.09 };
 		double[] sortedArray = bucketSort(array);

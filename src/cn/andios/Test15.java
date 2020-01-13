@@ -11,12 +11,12 @@ import java.util.Set;
  * 
  * @author LSD
  *
- * @datetime 2019Äê12ÔÂ4ÈÕÏÂÎç3:52:13
+ * @datetime 2019å¹´12æœˆ4æ—¥ä¸‹åˆ3:52:13
  *
  */
 public class Test15 {
     /**
-     * 	Ë«Ö¸Õë
+     * 	åŒæŒ‡é’ˆ
      */
     public static List<List<Integer>> threeSum2(int[] nums) {
         if(nums == null || nums.length <3) {
@@ -51,7 +51,7 @@ public class Test15 {
         return res;
     }
 	/**
-	 *	³¬Ê±
+	 *	è¶…æ—¶
 	 */
     public static List<List<Integer>> threeSum1(int[] nums) {
         if(nums == null || nums.length <3) {

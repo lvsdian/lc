@@ -5,16 +5,16 @@ import java.util.Arrays;
  * 88 75 215
  * @author LSD
  *
- * @datetime 2019Äê10ÔÂ20ÈÕÏÂÎç3:28:46
+ * @datetime 2019å¹´10æœˆ20æ—¥ä¸‹åˆ3:28:46
  *
  */
 public class Test75 {
 
     public static void sortColors(int[] nums) {
     	/**
-    	 * ¼´ÈıÂ·¿ìÅÅ
+    	 * å³ä¸‰è·¯å¿«æ’
     	 * 
-    	 * ½«Êı×é·ÖÎª <v  =v  >v 3¸öÇø¼ä
+    	 * å°†æ•°ç»„åˆ†ä¸º <v  =v  >v 3ä¸ªåŒºé—´
     	 * 
     	 * 0...lt  lt+1...gt-1  gt...nums.length
     	 */

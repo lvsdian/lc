@@ -1,17 +1,17 @@
 package cn.andios;
 public class BinSearch {
-	//²âÊÔ
+	//æµ‹è¯•
 	public static void main(String[] args) {
 		int[] arr = {0,1,2,3,4,5,6,7,8,9};
-		//×ó±ÕÓÒ±ÕÇø¼ä [0, arr.length - 1]
+		//å·¦é—­å³é—­åŒºé—´ [0, arr.length - 1]
 		int index = binSearch(arr, 0, arr.length - 1, 0);
-		System.out.println("ÏÂ±ê£º" + index);
+		System.out.println("ä¸‹æ ‡ï¼š" + index);
 	}
 
 	private static int binSearch(int[] arr, int l, int r, int target) {
 		if(r < l)
 			return -1;
-		//int mid = (l + r)/2; //ÕâÖÖĞ´·¨µ±l¡¢r×ã¹»´óÊ±£¬l+r¿ÉÄÜ»áÕûĞÍÒç³ö
+		//int mid = (l + r)/2; //è¿™ç§å†™æ³•å½“lã€rè¶³å¤Ÿå¤§æ—¶ï¼Œl+rå¯èƒ½ä¼šæ•´å‹æº¢å‡º
 		int mid = l + (r-l)/2;
 		if(arr[mid] == target)
 			return mid;
@@ -19,10 +19,5 @@ public class BinSearch {
 			return binSearch(arr, mid + 1, r, target);
 		else
 			return binSearch(arr, l, mid - 1, target);
-	
 	}
-
-	
-
-
 }

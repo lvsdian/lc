@@ -3,14 +3,14 @@ package cn.andios;
  * 
  * @author LSD
  *
- * @datetime 2020Äê1ÔÂ1ÈÕÏÂÎç8:06:43
+ * @datetime 2020å¹´1æœˆ1æ—¥ä¸‹åˆ8:06:43
  *
  */
 public class Test328 {
 	public static ListNode5 oddEvenList(ListNode5 head) {
 		/**
-		 * ¹¹ÔìÁ½¸öÁ´±í£¬·Ö±ğ´æÆæÊıÎ»µÄ½ÚµãºÍÅ¼ÊıÎ»µÄ½Úµã£¬
-		 * ±éÀúÍêºóÔÙÈÃÅ¼Êı½Úµã½ÓÔÚÆæÊı½ÚµãºóÃæ£¬×ö·¨ÀàËÆ86
+		 * æ„é€ ä¸¤ä¸ªé“¾è¡¨ï¼Œåˆ†åˆ«å­˜å¥‡æ•°ä½çš„èŠ‚ç‚¹å’Œå¶æ•°ä½çš„èŠ‚ç‚¹ï¼Œ
+		 * éå†å®Œåå†è®©å¶æ•°èŠ‚ç‚¹æ¥åœ¨å¥‡æ•°èŠ‚ç‚¹åé¢ï¼Œåšæ³•ç±»ä¼¼86
 		 */
 	    ListNode5  odd = new ListNode5(0);
 	    ListNode5 even = new ListNode5(0);
@@ -19,13 +19,13 @@ public class Test328 {
 	    ListNode5  evenHead = even;
 	    
 	    while(head != null) {
-	    	//½«µ±Ç°head·Åµ½oddÄ©Î²
+	    	//å°†å½“å‰headæ”¾åˆ°oddæœ«å°¾
 	    	oddHead.next = head;
 	    	head = head.next;
 	    	oddHead = oddHead.next;
 	    	oddHead.next = null;
 	    	
-	    	//½«µ±Ç°head·Åµ½evenÄ©Î²
+	    	//å°†å½“å‰headæ”¾åˆ°evenæœ«å°¾
 	    	if(head != null) {
 	    		evenHead.next = head;
 		    	head = head.next;
@@ -37,7 +37,7 @@ public class Test328 {
 		return odd.next;
 	}
 	public static void main(String[] args) {
-		//¹¹ÔìÁ´±í
+		//æ„é€ é“¾è¡¨
 		ListNode5 head = new ListNode5(0);
 		ListNode5 tail = head;
 		ListNode5 newNode = null;

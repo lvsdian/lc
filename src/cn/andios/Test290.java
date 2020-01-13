@@ -18,14 +18,14 @@ public class Test290 {
         Map<Character, String> map = new HashMap<Character, String>();
         for (int i = 0; i < strSplit.length; i++) {
         	ch = pArr[i];
-        	//如果map中有ch这个key,那么当前strSplit中的字符串必须与对应的value相等
+        	//濡傛灉map涓湁ch杩欎釜key,閭ｄ箞褰撳墠strSplit涓殑瀛楃涓插繀椤讳笌瀵瑰簲鐨剉alue鐩哥瓑
         	if(map.containsKey(ch)) {
         		if(!map.get(ch).equals(strSplit[i])) {
         			return false;
         		}
         	}else {
-            	//如果map中有这个value,那么当前ch必须已经存在于map中作为key,但执行到这里，进入了else块后
-        		//说明map中不包含ch这个key，所以直接返回false
+            	//濡傛灉map涓湁杩欎釜value,閭ｄ箞褰撳墠ch蹇呴』宸茬粡瀛樺湪浜巑ap涓綔涓簁ey,浣嗘墽琛屽埌杩欓噷锛岃繘鍏ヤ簡else鍧楀悗
+        		//璇存槑map涓笉鍖呭惈ch杩欎釜key锛屾墍浠ョ洿鎺ヨ繑鍥瀎alse
         		if(map.containsValue(strSplit[i])) {
         			return false;
         		}

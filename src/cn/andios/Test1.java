@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Test1 {
-	//
+	
 	public static void main(String[] args) {
 		int a[] = twoSum(new int[]{3,2,2,6},4);
 		System.out.println(a[0]+""+a[1]);

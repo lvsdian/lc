@@ -4,18 +4,18 @@ package cn.andios;
  * 26,27,80,283
  * @author LSD
  *
- * @datetime 2019Äê10ÔÂ9ÈÕÏÂÎç2:59:24
+ * @datetime 2019å¹´10æœˆ9æ—¥ä¸‹åˆ2:59:24
  *
  */
 public class Test27 {
 
 	public static int removeElementWithoutSwap(int [] nums,int val) {
 		/**
-		 * 	ÀûÓÃË«Ö¸Õëi,j£¬¿ªÊ¼¶¼Ö¸Ïònums[0]£¬
-		 * 	i´Ó0µ½nums.length-1±éÀúnums
-		 * 	j´Ó0¿ªÊ¼£¬¼ÇÂ¼É¾³ıÖ¸¶¨ÔªËØºóÊ£ÓàµÄÔªËØ£¬Òò´ËjÒ»¶¨<=i
+		 * 	åˆ©ç”¨åŒæŒ‡é’ˆi,jï¼Œå¼€å§‹éƒ½æŒ‡å‘nums[0]ï¼Œ
+		 * 	iä»0åˆ°nums.length-1éå†nums
+		 * 	jä»0å¼€å§‹ï¼Œè®°å½•åˆ é™¤æŒ‡å®šå…ƒç´ åå‰©ä½™çš„å…ƒç´ ï¼Œå› æ­¤jä¸€å®š<=i
 		 * 
-		 * 	Ïà±ÈÏÂÃæµÄ½â·¨£¬ÒòÎª²»ĞèÒª¿¼ÂÇÊı×éÖĞ³¬³öĞÂ³¤¶ÈºóÃæµÄÔªËØ£¬ËùÒÔ²»ÓÃ½»»»
+		 * 	ç›¸æ¯”ä¸‹é¢çš„è§£æ³•ï¼Œå› ä¸ºä¸éœ€è¦è€ƒè™‘æ•°ç»„ä¸­è¶…å‡ºæ–°é•¿åº¦åé¢çš„å…ƒç´ ï¼Œæ‰€ä»¥ä¸ç”¨äº¤æ¢
 		 */
 		int i = 0,j = 0;
 		while(i < nums.length) {
@@ -31,11 +31,11 @@ public class Test27 {
 	
 	public static int removeElement(int[] nums, int val) {
 	    /**
-		 * 	ÀûÓÃË«Ö¸Õëi,j£¬¿ªÊ¼¶¼Ö¸Ïònums[0]£¬
-		 * 		Èç¹ûnums[i] != val,¾Í½«nums[i]Óënums[j]½»»»£¬
-		 * 		Èç¹ûnums[i] == val,nums[j]²»¶¯
-		 * 		iºóÒÆ
-		 * 	Ö±µ½iÒÆµ½nums.lengthÎ»ÖÃ¡£·µ»Øj¡£
+		 * 	åˆ©ç”¨åŒæŒ‡é’ˆi,jï¼Œå¼€å§‹éƒ½æŒ‡å‘nums[0]ï¼Œ
+		 * 		å¦‚æœnums[i] != val,å°±å°†nums[i]ä¸nums[j]äº¤æ¢ï¼Œ
+		 * 		å¦‚æœnums[i] == val,nums[j]ä¸åŠ¨
+		 * 		iåç§»
+		 * 	ç›´åˆ°iç§»åˆ°nums.lengthä½ç½®ã€‚è¿”å›jã€‚
 		 * 
 		 */
 		int j = 0;
@@ -62,7 +62,7 @@ public class Test27 {
 	public static void main(String[] args) {
 		int []array = {0,1,2,2,3,0,4,2}; 
 		int len = removeElementWithoutSwap(array, 2);
-		System.out.println("len£º" + len);
+		System.out.println("lenï¼š" + len);
 		for (int i = 0; i < len; i++) {
 			System.out.print(array[i]+"\t");
 		}

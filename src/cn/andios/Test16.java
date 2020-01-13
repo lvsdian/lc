@@ -6,13 +6,13 @@ import java.util.Arrays;
  * 
  * @author LSD
  *
- * @datetime 2019Äê12ÔÂ6ÈÕÏÂÎç8:39:48
+ * @datetime 2019å¹´12æœˆ6æ—¥ä¸‹åˆ8:39:48
  *
  */
 public class Test16 {
 
 	/**
-	 * 	Ë«Ö¸Õë
+	 * 	åŒæŒ‡é’ˆ
 	 */
     public static int threeSumClosest(int[] nums, int target) {
 //    	if(nums == null || nums.length <3) {
@@ -30,7 +30,7 @@ public class Test16 {
     				}else if(nums[i]+nums[k]+nums[j] > target){	     									
     					min = Math.min(min, Math.abs(nums[i]+nums[k]+nums[j]-target));
     					if(temp != min) {
-    						//min±äĞ¡ÁË
+    						//minå˜å°äº†
     						result = nums[i]+nums[k]+nums[j];
     						temp = min;
     					}
@@ -38,7 +38,7 @@ public class Test16 {
     				}else {
     					min = Math.min(min, Math.abs(nums[i]+nums[k]+nums[j]-target));
     					if(temp != min) {
-    						//min±äĞ¡ÁË
+    						//minå˜å°äº†
     						result = nums[i]+nums[k]+nums[j];
     						temp = min;
     					}

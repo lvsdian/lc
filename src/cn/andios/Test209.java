@@ -4,7 +4,7 @@ package cn.andios;
  * 209 3 438 76
  * @author LSD
  *
- * @datetime 2019Äê11ÔÂ17ÈÕÏÂÎç6:39:49
+ * @datetime 2019å¹´11æœˆ17æ—¥ä¸‹åˆ6:39:49
  *
  */
 public class Test209 {
@@ -12,17 +12,17 @@ public class Test209 {
     public static int minSubArrayLen(int s, int[] nums) {
     	if(nums == null || nums.length == 0)
     		return 0;
-    	int l = 0,r = -1;//»¬¶¯´°¿Ú[l,r],×ó±ÕÓÒ±ÕÇø¼ä
-    	int sum = 0; //»¬¶¯´°¿ÚÄÚÔªËØµÄºÍ
-    	int res = nums.length + 1;//»¬¶¯´°¿ÚÄÚÔªËØ¸öÊı
+    	int l = 0,r = -1;//æ»‘åŠ¨çª—å£[l,r],å·¦é—­å³é—­åŒºé—´
+    	int sum = 0; //æ»‘åŠ¨çª—å£å†…å…ƒç´ çš„å’Œ
+    	int res = nums.length + 1;//æ»‘åŠ¨çª—å£å†…å…ƒç´ ä¸ªæ•°
     	while(l < nums.length) {
-    		//r+1 < nums.length£ººóÃæ»á½øĞĞr++£¬ËùÒÔÒª±£Ö¤r++ < s.length()
-    		//sum < s£ºÈç¹ûÇø¼ä[l,r]µÄºÍ<s
+    		//r+1 < nums.lengthï¼šåé¢ä¼šè¿›è¡Œr++ï¼Œæ‰€ä»¥è¦ä¿è¯r++ < s.length()
+    		//sum < sï¼šå¦‚æœåŒºé—´[l,r]çš„å’Œ<s
     		if(r+1 < nums.length && sum < s) {
-    			//rÖ¸ÕëÓÒÒÆ£¬°Ñr++Î»ÖÃÖµ¼Óµ½sumÖĞ
+    			//ræŒ‡é’ˆå³ç§»ï¼ŒæŠŠr++ä½ç½®å€¼åŠ åˆ°sumä¸­
     			r ++;
     			sum += nums[r];
-    		//Èç¹ûÇø¼ä[l,r]µÄºÍ>=s£º×óÖ¸ÕëÓÒÒÆ£¬sum¼õÈ¥lÎ»ÖÃÖµ
+    		//å¦‚æœåŒºé—´[l,r]çš„å’Œ>=sï¼šå·¦æŒ‡é’ˆå³ç§»ï¼Œsumå‡å»lä½ç½®å€¼
     		}else {
     			sum -= nums[l];
     			l ++;

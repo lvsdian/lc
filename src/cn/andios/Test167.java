@@ -5,17 +5,17 @@ import java.util.HashMap;
 import java.util.Map;
 /**
  * 167 125 344 345 11
- * 	×óÓÒÖ¸ÕëÅö×²·¨ 
+ * 	å·¦å³æŒ‡é’ˆç¢°æ’æ³• 
  * @author LSD
  *
- * @datetime 2019Äê10ÔÂ20ÈÕÏÂÎç2:21:51
+ * @datetime 2019å¹´10æœˆ20æ—¥ä¸‹åˆ2:21:51
  *
  */
 public class Test167 {
 
 	/**
-	 * ·Ç¿ÕÅĞ¶Ï
-	 * ¿ÉÒÔÓÃµÚ1ÌâÒ»ÑùµÄ×ö·¨£¬µ«Ã»ÓĞÀûÓÃ ÉıĞòÅÅÁĞ  ÕâÒ»ÌØµã
+	 * éç©ºåˆ¤æ–­
+	 * å¯ä»¥ç”¨ç¬¬1é¢˜ä¸€æ ·çš„åšæ³•ï¼Œä½†æ²¡æœ‰åˆ©ç”¨ å‡åºæ’åˆ—  è¿™ä¸€ç‰¹ç‚¹
 	 */
 	public static int[] twoSum2(int[] numbers, int target) {
 		Map<Integer,Integer> map = new HashMap<Integer, Integer>();
@@ -29,7 +29,7 @@ public class Test167 {
 	}
 	
 	/**
-	 * Ë«Ö¸Õë
+	 * åŒæŒ‡é’ˆ
 	 */
     public static int[] twoSum1(int[] numbers, int target) {
         int i = 0,j = numbers.length - 1;
@@ -51,7 +51,7 @@ public class Test167 {
         
         return null;
     }
-	//²âÊÔ
+	//æµ‹è¯•
 	public static void main(String[] args) {
 		int []array = {2, 7, 11, 15};
 		//int [] a = twoSum1(array, 9);

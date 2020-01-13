@@ -9,17 +9,17 @@ import java.util.PriorityQueue;
  * 
  * @author LSD
  *
- * @datetime 2019��12��4������11:26:54
+ * @datetime 2019年12月4日上午11:26:54
  *
  */
 public class Test451 {
 	
 	/**
-	 * 	�������滻hashmap��Ч�ʸ���
+	 * 	用数组替换hashmap，效率更高
 	 * 
-	 * 	1.��������ͳ��ÿ����ĸ���ֵ�Ƶ�ʣ�
-	 * 	2.����Ƶ�ʷ������ȼ�����(�ŵ������е�����ĸ��Ӧ������ֵ)
-	 * 	3.���γ��ӣ����ݳ��ӵ�Ԫ����ԭ�������ҵ���Ӧ��Ƶ�ʣ�ƴ�ӳ��ַ���
+	 * 	1.先用数组统计每个字母出现的频率，
+	 * 	2.根据频率放入优先级队列(放到队列中的是字母对应的整型值)
+	 * 	3.依次出队，根据出队的元素在原数组中找到对应的频率，拼接成字符串
 	 */
     public static String frequencySort2(String s) {
 

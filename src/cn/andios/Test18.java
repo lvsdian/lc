@@ -8,19 +8,19 @@ import java.util.List;
  * 
  * @author LSD
  *
- * @datetime 2019Äê12ÔÂ6ÈÕÏÂÎç6:44:33
+ * @datetime 2019å¹´12æœˆ6æ—¥ä¸‹åˆ6:44:33
  *
  */
 public class Test18 {
 	/**
-	 * 	Òª±£Ö¤·µ»Ø½á¹ûÖĞ²»ÄÜ°üº¬ÖØ¸´µÄlist£¬
-	 * 	ËùÒÔµ±
+	 * 	è¦ä¿è¯è¿”å›ç»“æœä¸­ä¸èƒ½åŒ…å«é‡å¤çš„listï¼Œ
+	 * 	æ‰€ä»¥å½“
 	 * 		nums[i] == nums[i-1];nums[j] == nums[j-1];nums[lo] == nums[lo+1];nums[hi] == nums[hi-1]
-	 * 	Ê±Òªi,j,lo,hi¶¼ÒªÒÆ¶¯£¬µ«ÒªÅÅ³ı¼¸¸öÌØÊâÇé¿ö£ºi=0£¬j=i+1
-	 * 	ÒòÎª£¬Èç¹ûi=0²»ÅÅ³ı£¬nums[i-1]¾Í»áÔ½½ç
-	 * 	Èç¹ûj=i+1²»ÅÅ³ı£¬¾Í»áÂ©µô
+	 * 	æ—¶è¦i,j,lo,hiéƒ½è¦ç§»åŠ¨ï¼Œä½†è¦æ’é™¤å‡ ä¸ªç‰¹æ®Šæƒ…å†µï¼ši=0ï¼Œj=i+1
+	 * 	å› ä¸ºï¼Œå¦‚æœi=0ä¸æ’é™¤ï¼Œnums[i-1]å°±ä¼šè¶Šç•Œ
+	 * 	å¦‚æœj=i+1ä¸æ’é™¤ï¼Œå°±ä¼šæ¼æ‰
 	 * 
-	 * 	41ms£¬»¹ÓĞĞèÒªÓÅ»¯µÄµØ·½£¬ÈçÏÂ£º
+	 * 	41msï¼Œè¿˜æœ‰éœ€è¦ä¼˜åŒ–çš„åœ°æ–¹ï¼Œå¦‚ä¸‹ï¼š
 	 */
     public static List<List<Integer>> fourSum(int[] nums, int target) {
     	List<List<Integer>> res = new ArrayList<>();
@@ -30,12 +30,12 @@ public class Test18 {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length-3; i++) {
         	if(i ==0 || nums[i] != nums[i-1]) {
-        		//	ÓÅ»¯1£º
+        		//	ä¼˜åŒ–1ï¼š
         		//	max = nums[i]+nums[nums.length-1]+nums[nums.length-2]+nums[nums.length-3]
         		//	min = nums[i]+nums[i+1]+nums[i+2]nums[i+3]
-        		//	Èç¹ûmax<target||min>target£¬Ö±½ÓÌø³ö;
+        		//	å¦‚æœmax<target||min>targetï¼Œç›´æ¥è·³å‡º;
         		for (int j = i+1; j < nums.length-2; j++) {
-            		// 	ÓÅ»¯2(ÀàËÆÓÅ»¯1)
+            		// 	ä¼˜åŒ–2(ç±»ä¼¼ä¼˜åŒ–1)
         			if(j == i+1 || nums[j] != nums[j-1]) {
         				int lo = j+1,hi = nums.length-1;
         				while(lo <hi) {

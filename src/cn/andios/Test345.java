@@ -4,14 +4,14 @@ package cn.andios;
  * 167 125 344 345 11
  * @author LSD
  *
- * @datetime 2019Äê11ÔÂ15ÈÕÏÂÎç8:49:30
+ * @datetime 2019å¹´11æœˆ15æ—¥ä¸‹åˆ8:49:30
  *
  */
 public class Test345 {
 
 	/**
-	 * 	×¢Òâ£º·Ç¿ÕÅĞ¶Ï²»ÊÇ·µ»Ønull,¶øÊÇ""
-	 * 	ÔªÒô£ºaeiouAEIOU¶ø²»ÊÇaeiou
+	 * 	æ³¨æ„ï¼šéç©ºåˆ¤æ–­ä¸æ˜¯è¿”å›null,è€Œæ˜¯""
+	 * 	å…ƒéŸ³ï¼šaeiouAEIOUè€Œä¸æ˜¯aeiou
 	 * @param s
 	 * @return
 	 */

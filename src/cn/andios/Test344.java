@@ -4,14 +4,14 @@ package cn.andios;
  * 167 125 344 345 11
  * @author LSD
  *
- * @datetime 2019Äê11ÔÂ15ÈÕÏÂÎç6:53:00
+ * @datetime 2019å¹´11æœˆ15æ—¥ä¸‹åˆ6:53:00
  *
  */
 public class Test344 {
 	
 	/**
-	 * 	¼ÙÉè a^b=c
-	 * 	Ôò a^c=b,b^c=a
+	 * 	å‡è®¾ a^b=c
+	 * 	åˆ™ a^c=b,b^c=a
 	 */
 	private static void reverseString2(char[] s) {
 		int n = s.length;
@@ -29,7 +29,7 @@ public class Test344 {
 	}
 
 	/**
-	 * 	µÍ¼¶×ö·¨£¬¼ÇµÃ¼Ó·Ç¿ÕÅĞ¶Ï
+	 * 	ä½çº§åšæ³•ï¼Œè®°å¾—åŠ éç©ºåˆ¤æ–­
 	 */
     public static void reverseString1(char[] s) {
     	if(s == null || s.length == 0) {

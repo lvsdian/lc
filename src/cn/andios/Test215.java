@@ -7,48 +7,48 @@ import java.util.PriorityQueue;
  * 88 75 215
  * @author LSD
  *
- * @datetime 2019Äê10ÔÂ20ÈÕÏÂÎç3:27:11
+ * @datetime 2019å¹´10æœˆ20æ—¥ä¸‹åˆ3:27:11
  *
  */
 public class Test215 {
 
 	/**
-	 * 	ÓÅÏÈ¼¶¶ÓÁĞapi
-	 *	Time Complexity£ºO(nlgk)
-	 *	Space Complexity£ºO(k)
+	 * 	ä¼˜å…ˆçº§é˜Ÿåˆ—api
+	 *	Time Complexityï¼šO(nlgk)
+	 *	Space Complexityï¼šO(k)
 	 */
 	public static int findKthLargest3(int[] nums, int k) {
 		 final PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
 		    for(int val : nums) {
-		    	//ËùÓĞÔªËØ²åÈëµ½¶ÓÁĞÖĞ
+		    	//æ‰€æœ‰å…ƒç´ æ’å…¥åˆ°é˜Ÿåˆ—ä¸­
 		    	priorityQueue.offer(val);
 		        if(priorityQueue.size() > k) {
-		        	//Í·ÔªËØ³ö¶Ó
+		        	//å¤´å…ƒç´ å‡ºé˜Ÿ
 		        	priorityQueue.poll();
 		        }
 		    }
-		    //·µ»ØÍ·ÔªËØ
+		    //è¿”å›å¤´å…ƒç´ 
 		    return priorityQueue.peek();
 	}
 
 	/**
-	 * 	·Ç¿ÕÅĞ¶Ï,kÊÇ·ñºÏ·¨ÅĞ¶Ï...
+	 * 	éç©ºåˆ¤æ–­,kæ˜¯å¦åˆæ³•åˆ¤æ–­...
 	 * 
-	 * 	Space Complexity£ºO(nlgn)  
-	 * 	Space Complexity£ºO(1)
+	 * 	Space Complexityï¼šO(nlgn)  
+	 * 	Space Complexityï¼šO(1)
 	 */
 	public static int findKthLargest2(int[] nums, int k) {
-		//ÅÅĞò£¬Ö±½Ó·µ»Ø
+		//æ’åºï¼Œç›´æ¥è¿”å›
 		int N = nums.length;
         Arrays.sort(nums);
         return nums[N - k];
 	}
 	
 	/**
-	 *	 ·Ç¿ÕÅĞ¶Ï,kÊÇ·ñºÏ·¨ÅĞ¶Ï...
+	 *	 éç©ºåˆ¤æ–­,kæ˜¯å¦åˆæ³•åˆ¤æ–­...
 	 * 
-	 *	 Space Complexity£ºO(n)
-	 *	 Space Complexity£ºO(1)
+	 *	 Space Complexityï¼šO(n)
+	 *	 Space Complexityï¼šO(1)
 	 */
     public static int findKthLargest1(int[] nums, int k) {
     	if(nums == null || nums.length == 0 || nums.length < k) {
@@ -74,27 +74,27 @@ public class Test215 {
         		}
         	}
         	swap(nums, start, left);
-        	//Ö´ĞĞµ½ÕâÀï£¬leftµÄ×ó±ß<=nums[left],leftµÄÓÒ±ß>nums[left]
+        	//æ‰§è¡Œåˆ°è¿™é‡Œï¼Œleftçš„å·¦è¾¹<=nums[left],leftçš„å³è¾¹>nums[left]
         	
         	/**
-        	 * nums[left]±íÊ¾µÄÊÇµÚ end-left+1´óµÄÊı
+        	 * nums[left]è¡¨ç¤ºçš„æ˜¯ç¬¬ end-left+1å¤§çš„æ•°
         	 */
         	int temp = end - left +1;
-        	//ÅöÇÉÕÒµ½ÁË
+        	//ç¢°å·§æ‰¾åˆ°äº†
         	if(k == temp) {
         		return nums[left];
         	}
         	
         	/**
-        	 * 	ÒªÕÒµÄÊıÔÚÓÒ±ß£¬±ÈÈçleft=2,Èôend=5£¬Ôòtemp=4,leftµÄindexÎª2£¬±íÊ¾µÚ3Ğ¡µÄÊı£¬±íÊ¾µÚ4´óµÄÊı£¬
-        	 * 	Èôk=3(kÒª±£Ö¤<temp),ÔòÔÚleftµÄÓÒ±ßÕÒµÚ3´óµÄÊı¡£
+        	 * 	è¦æ‰¾çš„æ•°åœ¨å³è¾¹ï¼Œæ¯”å¦‚left=2,è‹¥end=5ï¼Œåˆ™temp=4,leftçš„indexä¸º2ï¼Œè¡¨ç¤ºç¬¬3å°çš„æ•°ï¼Œè¡¨ç¤ºç¬¬4å¤§çš„æ•°ï¼Œ
+        	 * 	è‹¥k=3(kè¦ä¿è¯<temp),åˆ™åœ¨leftçš„å³è¾¹æ‰¾ç¬¬3å¤§çš„æ•°ã€‚
         	 */
         	else if(k < temp) {
         		return partition(nums, left + 1, end, k);
         	}
         	/**
-        	 * 	ÒªÕÒµÄÊıÔÚ×ó±ß£¬±ÈÈçleft=2,Èôend=5£¬start=0,Ôòtemp=4,leftµÄindexÎª2£¬±íÊ¾µÚ3Ğ¡µÄÊı£¬±íÊ¾µÚ4´óµÄÊı£¬
-        	 * 	Èôk=5(kÒª±£Ö¤>temp),ÔòÔÚleftµÄ×ó±ß(0-1)ÕÒµÚ1´ó(k-temp)µÄÊı¡£
+        	 * 	è¦æ‰¾çš„æ•°åœ¨å·¦è¾¹ï¼Œæ¯”å¦‚left=2,è‹¥end=5ï¼Œstart=0,åˆ™temp=4,leftçš„indexä¸º2ï¼Œè¡¨ç¤ºç¬¬3å°çš„æ•°ï¼Œè¡¨ç¤ºç¬¬4å¤§çš„æ•°ï¼Œ
+        	 * 	è‹¥k=5(kè¦ä¿è¯>temp),åˆ™åœ¨leftçš„å·¦è¾¹(0-1)æ‰¾ç¬¬1å¤§(k-temp)çš„æ•°ã€‚
         	 */
         	else{
         		return partition(nums, start, left - 1, k-temp);
@@ -114,6 +114,6 @@ public class Test215 {
     	//int e = findKthLargest1(nums, 2 );
     	//int e = findKthLargest2(nums, 2 );
     	int e = findKthLargest3(nums, 2 );
-    	System.out.println("e£º" + e);
+    	System.out.println("eï¼š" + e);
 	}
 }

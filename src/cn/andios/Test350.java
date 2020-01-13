@@ -12,16 +12,16 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * hashmap»òË«Ö¸Õë
+ * hashmapæˆ–åŒæŒ‡é’ˆ
  * @author LSD
  *
- * @datetime 2019Äê11ÔÂ26ÈÕÏÂÎç7:21:53
+ * @datetime 2019å¹´11æœˆ26æ—¥ä¸‹åˆ7:21:53
  *
  */
 public class Test350 {
 
 	/**
-	 * hashmapÓÅ»¯
+	 * hashmapä¼˜åŒ–
 	 */
     public static int[] intersect2(int[] nums1, int[] nums2) {
     	Map<Integer, Integer> map = new HashMap<Integer, Integer>();
