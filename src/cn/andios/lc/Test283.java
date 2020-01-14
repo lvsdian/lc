@@ -1,4 +1,4 @@
-package cn.andios;
+package cn.andios.lc;
 /**
  * 26,27,80,283
  * @author LSD

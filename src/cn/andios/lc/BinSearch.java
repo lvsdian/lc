@@ -1,4 +1,10 @@
-package cn.andios;
+/*
+ * @Author: lsd
+ * @Date: 2020-01-13 15:57:38
+ * @Description: 
+ * @Software: vscode
+ */
+package cn.andios.lc;
 public class BinSearch {
 	//测试
 	public static void main(String[] args) {

@@ -1,10 +1,10 @@
 /*
  * @Author: lsd
- * @Date: 2020-01-13 12:17:20
+ * @Date: 2020-01-13 15:57:38
  * @Description: 
  * @Software: vscode
  */
-package cn.andios;
+package cn.andios.lc;
 
 import java.util.Stack;
 
@@ -54,8 +54,8 @@ public class Test445 {
         ListNode7 listNode = new ListNode7(Integer.MAX_VALUE);
         ListNode7 newNode = null;
 
-        Stack stack1 = new Stack<Integer>();
-        Stack stack2 = new Stack<Integer>();
+        Stack<Integer> stack1 = new Stack<Integer>();
+        Stack<Integer> stack2 = new Stack<Integer>();
         // 链表元素装入stack
         while (l1 != null) {
             stack1.push(l1.val);

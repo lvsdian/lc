@@ -1,4 +1,4 @@
-package cn.andios;
+package cn.andios.lc;
 
 /**
  * 167 125 344 345 11

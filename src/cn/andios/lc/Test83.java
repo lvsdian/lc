@@ -1,4 +1,4 @@
-package cn.andios;
+package cn.andios.lc;
 
 /**
  * @Author: lsd

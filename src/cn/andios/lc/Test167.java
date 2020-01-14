@@ -1,4 +1,4 @@
-package cn.andios;
+package cn.andios.lc;
 
 import java.util.Arrays;
 import java.util.HashMap;
