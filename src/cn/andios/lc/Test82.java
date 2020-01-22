@@ -32,16 +32,34 @@ public class Test82 {
         if(head == null || head.next == null){
             return head;
         }
-        ListNode9 header1 = new ListNode9(Integer.MAX_VALUE);
+        //虚拟头节点
+        ListNode9 header = new ListNode9(Integer.MAX_VALUE);
         
-        header1.next = head;
-        ListNode9 header2 = header1;
-
-        ListNode9 nextNode = header1.next.next;
-        while()
-
-
-        return null;
+        header.next = head;
+        //快慢指针
+        //慢指针指向虚拟头节点，记录最后返回的链表的节点
+        ListNode9 slow = header;
+        //快指针遍历链表
+        ListNode9 fast = header.next;
+        //快指针与快指针.next是否重复的标志
+        boolean isDump;
+        while(fast != null){
+            isDump = false;
+            //如果重复了，快指针就一直后移
+            while(fast.next != null && fast.val == fast.next.val){
+                isDump = true;
+                fast = fast.next;        
+            }
+            //一旦没重复，就把快指针节点添加到慢指针中
+            if(!isDump){
+                slow.next = fast;
+                slow = slow.next;
+            }
+            //快指针后移
+            fast = fast.next;
+        }
+        slow.next = null;
+        return header.next;
     }
 }
 
