@@ -12,6 +12,7 @@
 451						hashmap、PriorityQueue
 49						hashmap(字母异位词问题可以用数组计数字符来解决，也可以转成char数组再排序，排完序直接比较)
 220						treeSet
+
 206					反转链表
 92					反转一个链表的一部分
 86					将一个链表分成分成两个部分(<target在前，>=target在后)
@@ -27,6 +28,10 @@
 19					删除链表末尾第n个元素，双指针
 61					环形链表解决链表旋转问题
 143,234				快慢指针，翻转链表
+
+对于Stack，pop检索并删除；peek检索不删除；push入栈
+对于PriorityQueue，poll检索并删除；peek检索不删除；offer与add一模一样都是入队
+
 遍历map：
 	map.forEach((k,j)->{
 		System.out.println(k+""+j);
