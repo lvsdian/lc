@@ -32,6 +32,8 @@
 对于Stack，pop检索并删除；peek检索不删除；push入栈
 对于PriorityQueue，poll检索并删除；peek检索不删除；offer与add一模一样都是入队
 
+104						求二叉树最大深度
+
 遍历map：
 	map.forEach((k,j)->{
 		System.out.println(k+""+j);
