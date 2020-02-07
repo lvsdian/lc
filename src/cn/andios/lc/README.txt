@@ -33,7 +33,11 @@
 对于PriorityQueue，poll检索并删除；peek检索不删除；offer与add一模一样都是入队
 
 104						求二叉树最大深度
-
+111						求二叉树最小深度
+226						翻转二叉树
+100						比较两个二叉树是否相等
+101						判断二叉树是否左右对称
+222						计算完全二叉树的节点个数
 遍历map：
 	map.forEach((k,j)->{
 		System.out.println(k+""+j);
