@@ -31,12 +31,12 @@ public class Test104 {
         }
         //构建二叉树
         binTree.setTreeNode1(list.get(0));
-        
-
+        int x = maxDepth(list.get(0));
+        System.out.println(x);
         
     }
 
-    public  int maxDepth(TreeNode1 root) {
+    public static int maxDepth(TreeNode1 root) {
         
         if(root == null){
             return 0;
