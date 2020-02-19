@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Test145 {
+public class Test94 {
     public List<Integer> preorderTraversal(TreeNode12 root) {
         List<Integer> list = new ArrayList<>();
         if(root == null){
