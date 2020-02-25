@@ -1,35 +1,35 @@
 /*
  * @Author: lsd
- * @Date: 2020-02-24 23:51:07
+ * @Date: 2020-02-25 11:30:02
  * @Software: vscode
  * @Description: 
  */
 package cn.andios.jianzhi;
-import java.util.*;
-public class Test61 {
-    ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
-        ArrayList<ArrayList<Integer> > list = new ArrayList<>();
-        if(pRoot == null){
-            return list;
+
+public class Test62 {
+    
+    int index = -1;
+    String Serialize(TreeNode root) {
+        if(root == null){
+            return "#";
+        }else{
+            return root.val + "!" + Serialize(root.left) + "!" + Serialize(root.right);
         }
-        Queue<TreeNode> linkedList = new LinkedList<>();
-        linkedList.add(pRoot);
-        while(!linkedList.isEmpty()){
-            int count = linkedList.size();
-            ArrayList<Integer> listTmp = new ArrayList<>();
-            while(count >0){
-                TreeNode node = linkedList.poll();
-                listTmp.add(node.val);
-                if(node.left != null){
-                    linkedList.add(node.left);
-                }
-                if(node.right != null){
-                    linkedList.add(node.right);
-                }
-                count --;
-            }
-            list.add(listTmp);
+    }
+
+    TreeNode Deserialize(String str) {
+        String[] s = str.split("!");
+        index ++;
+        int len = s.length;
+        if(index > len){
+            return null;
         }
-        return list;
+        TreeNode node = null;
+        if(!"#".equals(s[index])){
+            node = new TreeNode(Integer.parseInt(s[index]));
+            node.left = Deserialize(str);
+            node.right = Deserialize(str);
+        }
+        return node;
     }
 }

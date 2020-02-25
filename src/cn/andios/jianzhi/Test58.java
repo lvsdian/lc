@@ -1,42 +1,29 @@
 /*
  * @Author: lsd
- * @Date: 2020-02-24 22:40:58
+ * @Date: 2020-02-24 23:18:37
  * @Software: vscode
  * @Description: 
- * 
  */
 package cn.andios.jianzhi;
 
-class TreeLinkNode {
-    int val;
-    TreeLinkNode left = null;
-    TreeLinkNode right = null;
-    TreeLinkNode next = null;
-
-    TreeLinkNode(int val) {
-        this.val = val;
-    }
-}
-public class Test58 {
-    public TreeLinkNode GetNext(TreeLinkNode pNode)
+public class Test59 {
+    boolean isSymmetrical(TreeNode pRoot)
     {
-        if(pNode.right != null){
-            TreeLinkNode pRight = pNode.right;
-            while(pRight.left != null){
-                pRight = pRight.left;
+        return isMirror(pRoot,pRoot);
+    }
+    public boolean isMirror(TreeNode node1,TreeNode node2){
+        //都为null
+        if(node1 == null && node2 == null){
+            return true;
+        }
+        //都不为null
+        if(node1 != null && node2 != null){
+            if(node1.val != node2.val){
+                return false;
             }
-            return pRight;
+            return isMirror(node1.left, node2.right) && isMirror(node1.right, node2.left);
         }
-        if(pNode.next !=null && pNode.next.left  == pNode){
-            return pNode.next;
-        }
-        if(pNode.next != null){
-            TreeLinkNode pNext = pNode.next;
-            while(pNext.next != null && pNext.next.right == pNext){
-                pNext = pNext.next;
-            }
-            return pNext.next;
-        }
-        return null;
+        //一个为null，一个不为null
+        return false;
     }
 }

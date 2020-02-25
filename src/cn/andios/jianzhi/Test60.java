@@ -1,48 +1,35 @@
 /*
  * @Author: lsd
- * @Date: 2020-02-24 23:33:18
+ * @Date: 2020-02-24 23:51:07
  * @Software: vscode
  * @Description: 
- *  之字形打印二叉树，其实就是层次遍历，加个isReverse判断
  */
 package cn.andios.jianzhi;
-
 import java.util.*;
-
-public class Test60 {
-    public ArrayList<ArrayList<Integer> > Print1(TreeNode pRoot) {
-        ArrayList<ArrayList<Integer> > list = new  ArrayList<>();
+public class Test61 {
+    ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+        ArrayList<ArrayList<Integer> > list = new ArrayList<>();
         if(pRoot == null){
             return list;
         }
         Queue<TreeNode> linkedList = new LinkedList<>();
         linkedList.add(pRoot);
-        boolean isReverse = false;
         while(!linkedList.isEmpty()){
             int count = linkedList.size();
-            ArrayList <Integer> listTmp = new ArrayList<>();
-            for(int i = 0;i < count;i ++){
+            ArrayList<Integer> listTmp = new ArrayList<>();
+            while(count >0){
                 TreeNode node = linkedList.poll();
-                if(!isReverse){
-                    listTmp.add(node.val);
-                }else{
-                    listTmp.add(0,node.val);
-                }
+                listTmp.add(node.val);
                 if(node.left != null){
                     linkedList.add(node.left);
                 }
                 if(node.right != null){
                     linkedList.add(node.right);
                 }
+                count --;
             }
-            if(listTmp.size() > 0){
-                list.add(listTmp);
-            }
-            
-            isReverse = !isReverse;
+            list.add(listTmp);
         }
         return list;
     }
-
-  
 }

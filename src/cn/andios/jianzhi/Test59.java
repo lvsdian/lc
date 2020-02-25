@@ -1,29 +1,48 @@
 /*
  * @Author: lsd
- * @Date: 2020-02-24 23:18:37
+ * @Date: 2020-02-24 23:33:18
  * @Software: vscode
  * @Description: 
+ *  之字形打印二叉树，其实就是层次遍历，加个isReverse判断
  */
 package cn.andios.jianzhi;
 
-public class Test59 {
-    boolean isSymmetrical(TreeNode pRoot)
-    {
-        return isMirror(pRoot,pRoot);
-    }
-    public boolean isMirror(TreeNode node1,TreeNode node2){
-        //都为null
-        if(node1 == null && node2 == null){
-            return true;
+import java.util.*;
+
+public class Test60 {
+    public ArrayList<ArrayList<Integer> > Print1(TreeNode pRoot) {
+        ArrayList<ArrayList<Integer> > list = new  ArrayList<>();
+        if(pRoot == null){
+            return list;
         }
-        //都不为null
-        if(node1 != null && node2 != null){
-            if(node1.val != node2.val){
-                return false;
+        Queue<TreeNode> linkedList = new LinkedList<>();
+        linkedList.add(pRoot);
+        boolean isReverse = false;
+        while(!linkedList.isEmpty()){
+            int count = linkedList.size();
+            ArrayList <Integer> listTmp = new ArrayList<>();
+            for(int i = 0;i < count;i ++){
+                TreeNode node = linkedList.poll();
+                if(!isReverse){
+                    listTmp.add(node.val);
+                }else{
+                    listTmp.add(0,node.val);
+                }
+                if(node.left != null){
+                    linkedList.add(node.left);
+                }
+                if(node.right != null){
+                    linkedList.add(node.right);
+                }
             }
-            return isMirror(node1.left, node2.right) && isMirror(node1.right, node2.left);
+            if(listTmp.size() > 0){
+                list.add(listTmp);
+            }
+            
+            isReverse = !isReverse;
         }
-        //一个为null，一个不为null
-        return false;
+        return list;
     }
+
+  
 }
