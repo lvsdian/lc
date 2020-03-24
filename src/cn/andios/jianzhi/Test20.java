@@ -3,6 +3,8 @@
  * @Date: 2020-02-22 15:17:07
  * @Software: vscode
  * @Description: 
+ * 
+ *  两个栈，一个用于存所有元素，一个用于存当前栈内的最小元素
  */
 package cn.andios.jianzhi;
 

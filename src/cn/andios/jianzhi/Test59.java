@@ -9,7 +9,7 @@ package cn.andios.jianzhi;
 
 import java.util.*;
 
-public class Test60 {
+public class Test59 {
     public ArrayList<ArrayList<Integer> > Print1(TreeNode pRoot) {
         ArrayList<ArrayList<Integer> > list = new  ArrayList<>();
         if(pRoot == null){

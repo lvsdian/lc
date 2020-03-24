@@ -6,7 +6,7 @@
  */
 package cn.andios.jianzhi;
 
-public class Test57 {
+public class Test56 {
     public ListNode deleteDuplication(ListNode pHead)
     {
        if(pHead == null || pHead.next == null){

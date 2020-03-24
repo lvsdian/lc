@@ -8,7 +8,7 @@ package cn.andios.jianzhi;
 
 import java.util.*;
 
-public class Test65 {
+public class Test64 {
     public ArrayList<Integer> maxInWindows(int [] num, int size)
     {
         ArrayList<Integer> list = new ArrayList<>();

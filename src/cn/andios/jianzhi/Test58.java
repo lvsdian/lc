@@ -6,7 +6,7 @@
  */
 package cn.andios.jianzhi;
 
-public class Test59 {
+public class Test58 {
     boolean isSymmetrical(TreeNode pRoot)
     {
         return isMirror(pRoot,pRoot);

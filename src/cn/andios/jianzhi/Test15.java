@@ -2,7 +2,7 @@
  * @Author: lsd
  * @Date: 2020-02-21 21:37:10
  * @Software: vscode
- * @Description: 反正链表
+ * @Description: 反转链表
  */
 package cn.andios.jianzhi;
 

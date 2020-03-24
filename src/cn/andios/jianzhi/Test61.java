@@ -6,7 +6,7 @@
  */
 package cn.andios.jianzhi;
 
-public class Test62 {
+public class Test61 {
     
     int index = -1;
     String Serialize(TreeNode root) {

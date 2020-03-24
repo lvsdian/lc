@@ -14,12 +14,14 @@ public class Test12 {
     } 
 
     public double Power(double base, int exponent) {
-        double result = 1.0d;
-        if(exponent == 0){
-            return result;
+        //base可能为0，如果base为0，exponent为负数，0就成了分母 
+        if(base == 0){
+            return 0.0;
         }
-        exponent =  exponent > 0 ? exponent : -exponent;
-        for (int i = 1; i <= exponent; i++) {
+
+        double result = 1.0d;
+        int e =  exponent > 0 ? exponent : -exponent;
+        for (int i = 1; i <= e; i++) {
             result *= base;
         }
         return exponent > 0 ? result : 1 / result;

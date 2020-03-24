@@ -5,7 +5,7 @@
  * @Description: 
  *      对于f(n)，如果跳一级台阶为f(n - 1)
  *                如果跳两级台阶为f(n - 2)
- *              所以，f(n) = f(n - 1) + f(n - 2)
+ *              那么，f(n) = f(n - 1) + f(n - 2)
  */
 package cn.andios.jianzhi;
 

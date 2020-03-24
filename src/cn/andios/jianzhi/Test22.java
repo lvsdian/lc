@@ -3,7 +3,7 @@
  * @Date: 2020-02-22 15:34:42
  * @Software: vscode
  * @Description: 
- *  层次遍历
+ *  层次遍历，从上到下，从左到右
  */
 package cn.andios.jianzhi;
 

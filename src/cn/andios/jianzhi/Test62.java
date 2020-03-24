@@ -10,7 +10,7 @@ package cn.andios.jianzhi;
 
 import java.util.*;
 
-public class Test63 {
+public class Test62 {
     TreeNode KthNode(TreeNode pRoot, int k)
     {
         if(pRoot == null || k <= 0){

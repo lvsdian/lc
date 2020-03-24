@@ -17,7 +17,7 @@ class TreeLinkNode {
         this.val = val;
     }
 }
-public class Test58 {
+public class Test57 {
     public TreeLinkNode GetNext(TreeLinkNode pNode)
     {
         if(pNode.right != null){

@@ -6,7 +6,7 @@
  */
 package cn.andios.jianzhi;
 
-public class Test67 {
+public class Test66 {
     public int movingCount(int threshold, int rows, int cols){
         if(threshold < 0 || rows < 0 || cols < 0){
             return 0;

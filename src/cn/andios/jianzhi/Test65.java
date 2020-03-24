@@ -6,7 +6,7 @@
  */
 package cn.andios.jianzhi;
 
-public class Test66 {
+public class Test65 {
     public boolean hasPath(char[] matrix, int rows, int cols, char[] str){
         if(matrix == null || matrix.length != rows * cols || str == null){
             return false;

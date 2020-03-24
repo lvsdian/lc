@@ -6,7 +6,7 @@
  */
 package cn.andios.jianzhi;
 import java.util.*;
-public class Test61 {
+public class Test60 {
     ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer> > list = new ArrayList<>();
         if(pRoot == null){

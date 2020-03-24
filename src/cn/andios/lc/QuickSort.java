@@ -1,9 +1,20 @@
+/*
+ * @Author: lsd
+ * @Date: 2020-01-13 15:57:38
+ * @Software: vscode
+ * @Description: 
+ */
 package cn.andios.lc;
 
 import java.util.Arrays;
 
 /**
  * 	双指针、挖坑、三路快排
+ * 双路快排，时间复杂度
+ * 		最好情况：每次都分一半，总共分lgn次，每次进行遍历为n，所以是nlgn
+ * 		最坏情况：每次排序只排序一个元素，每次是n，总共排n次，所以是n^2，解决办法：pivot值随机取
+ * 
+ * 		空间复杂度 lgn,每次都需要放一些中间变量
  * 
  * @author LSD
  *

@@ -3,8 +3,9 @@
  * @Date: 2020-02-21 19:17:20
  * @Software: vscode
  * @Description: 
+ *  双指针，[0,i]为奇数，[i + 1,array.length  - 1]为偶数
  *  i从0位置开始，如果碰到偶数，停下来
- *  j从i + 1位置开始，如果碰到计数停下来，arr[i]到array[j-1]位置元素后移，arr[j]位置元素移到arr[i]上
+ *  j从i + 1位置开始，如果碰到奇数停下来，arr[i]到array[j-1]位置元素后移，arr[j]位置元素移到arr[i]上
  */
 package cn.andios.jianzhi;
 
