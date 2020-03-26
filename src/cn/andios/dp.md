@@ -373,3 +373,143 @@ public int maxSubArray(int[] nums) {
     }
 ```
 
+### [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+
+> 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+
+> 如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。
+
+> 注意：你不能在买入股票前卖出股票。
+
+> 示例 1:
+
+> 输入: [7,1,5,3,6,4]
+> 输出: 5
+> 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+>      注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+
+> 示例 2:
+
+> 输入: [7,6,4,3,1]
+> 输出: 0
+> 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+
+> 1. 非空判断：prices长度必须 > 1
+> 2. 确定状态：dp[i]表示在第i天卖出的最大利润
+> 3. 转移方程：dp[i] = dp[i - 1] + prices[i] - prices[i - 1]
+> 4. 边界：dp[0] = 0  dp[1] = 0;
+> 5. 计算
+
+```java
+	public int maxProfit(int[] prices) {
+         if(prices == null || prices.length <= 1){
+            return 0;
+        }
+        //状态 dp[i]表示在第i天卖出的最大利润
+        int dp[] = new int[prices.length + 1];
+        //转移方程dp[i] = dp[i - 1] + prices[i] - prices[i - 1]
+        int max = Integer.MIN_VALUE;
+        //边界
+        dp[0] = 0;
+        dp[1] = 0;
+        for(int i = 2;i <= prices.length;i ++){
+            dp[i] = Math.max(dp[i - 1] + prices[i - 1] - prices[i - 2],0);
+            max = Math.max(max,dp[i]);
+        }
+        return max;
+    }
+```
+
+### [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
+
+> 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
+
+> 示例 1:
+
+> 输入: coins = [1, 2, 5], amount = 11
+> 输出: 3 
+> 解释: 11 = 5 + 5 + 1
+
+> 示例 2:
+
+> 输入: coins = [2], amount = 3
+> 输出: -1
+> 说明:
+> 你可以认为每种硬币的数量是无限的。
+
+> 1. 非空判断：coins最少有1个元素，amount必须 >= 0
+> 2. 确定状态：dp[i]表示拼成i元所需最少硬币个数
+> 3. 转移方程：dp[amount] = Math.min(dp[amount - conis[i]] + 1,dp[amount])
+> 4. 边界：dp[0] = 0 
+> 5. 计算
+
+```java
+    public int coinChange(int[] coins, int amount) {
+        //非空判断
+        if(coins == null || coins.length == 0 || amount < 0){
+            return -1;
+        }
+        //确定状态；dp[i]表示拼成i元所需硬币个数
+        int[] dp = new int [amount + 1];
+        //状态方程
+        //dp[amount] = Math.min(dp[amount - conis[i]] + 1,dp[amount])
+        //边界        
+        Arrays.fill(dp,Integer.MAX_VALUE);
+        dp[0] = 0;
+        for(int i = 1;i <= amount;i ++){
+            for(int j = 0;j < coins.length;j ++){
+                //比如[1,2,5]凑出11，dp[i] = min(dp[i - 1],dp[i - 2],dp[i - 5])
+                //保证不越界 && 保证 dp[i - j]存在，所以要加if判断
+                if(i >= coins[j] && dp[i - coins[j]] != Integer.MAX_VALUE){
+                    dp[i] = Math.min(dp[i - coins[j]] + 1,dp[i]);
+                }
+            }
+        }
+        return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount] ;
+    }
+```
+
+### [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+> 给定一个无序的整数数组，找到其中最长上升子序列的长度。
+
+> 示例:
+
+> 输入: [10,9,2,5,3,7,101,18]
+> 输出: 4 
+> 解释: 最长的上升子序列是 [2,3,7,101]，它的长度是 4。
+
+> 1. 非空判断：nums最少有一个元素
+>
+> 2. 确定状态：dp[i]表示前i个元素的最大上升子序列
+>
+> 3. 转移方程：包含nums[i]或者不包含nums[i]（必须以i结尾，因为dp[i]就是表示以i结尾的结果）
+>
+>    ​					nums[i] > nums[j]，dp[i] = dp[j] + 1；
+>
+>    ​					nums[i] < nums[j]，dp[i] = dp[i]			
+>
+> 4. 边界：dp[i] = 1
+>
+> 5. 计算
+
+```java
+    public int lengthOfLIS(int[] nums) {
+        if(nums.length == 0) 
+            return 0;  
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp,1);
+        int max = 0;
+        for(int i = 0;i < nums.length;i ++){
+            for(int j = 0;j < i;j ++){
+                //只有当nums[j] < num[i]时dp[i]=dp[j] + 1才成立，所以必须加个判断
+                if(nums[j] < nums[i]){
+                    dp[i] = Math.max(dp[j] + 1,dp[i]);
+                }
+            }
+            max = Math.max(max,dp[i]);
+        }
+        return max;
+    }
+```
+
