@@ -420,6 +420,80 @@ public int maxSubArray(int[] nums) {
     }
 ```
 
+### [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+> 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+>
+> 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+>
+> 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+> 示例 :
+>
+> 输入: [1,2,3,4,5]
+> 输出: 4
+> 解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+>      注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+>      因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+
+solution 1
+
+```java
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length < 2){
+            return 0;
+        }
+        int len = prices.length;
+        int sum = 0;
+        for(int i = 1;i < len;i ++){
+            sum += Math.max(0,prices[i] - prices[i - 1]);
+        }
+        return sum;
+    }
+```
+
+solution 2
+
+> 1. 非空判断：prices长度必须 > 1
+>
+> 2. 确定状态：dp[i]\[j]表示在第i天持有或者不持有的最大利润（持有或不持有就0 1来表示）
+>
+> 3. 转移方程：
+>
+>    ​				第i天持有：i-1天不持有，i天买入；i-1天持有，i天不卖出
+>
+>    ​				第i天不持有：i-1天不持有，i天不买入；i-1天持有，i天卖出
+>
+>    ​				dp[i]\[0] = max(dp[i-1]\[0],dp[i-1]\[1] + prices[i]);
+>
+>    ​				dp[i]\[1] = max(dp[i-1]\[1],dp[i-1]\[0] - prices[i]);
+>
+> 4. 边界：dp[0]\[0] = 0  dp[0]\[1] = -prices[0];
+>
+> 5. 计算
+
+```java
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length < 2){
+            return 0;
+        }
+        int len = prices.length;
+        int[][] dp = new int[len + 1][2];
+
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        for(int i = 1;i <= len;i ++){
+            //因为dp长度为len+1，最终返回dp[len]，所以是prices[i-1]
+            dp[i][0] = Math.max(dp[i-1][0],dp[i-1][1] + prices[i - 1]);
+            dp[i][1] = Math.max(dp[i-1][1],dp[i-1][0] - prices[i - 1]);
+
+        }
+        return dp[len][0];
+    }
+```
+
+
+
 ### [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
 
 > 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
@@ -510,6 +584,68 @@ public int maxSubArray(int[] nums) {
             max = Math.max(max,dp[i]);
         }
         return max;
+    }
+```
+
+### [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
+
+> 给定 *n* 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+
+**示例:**
+
+```
+输入: [0,1,0,2,1,0,1,3,2,1,2,1]
+输出: 6
+```
+
+![image.png](http://ww1.sinaimg.cn/large/007jDR55gy1gd8co2o2i7j30ii06t3yt.jpg)
+
+
+
+> 1. 非空判断：height最少有三个元素
+>
+> 2. 确定状态：求出每个元素左边最高柱子和右边最高柱子
+>
+>    ​					max_left[i]表示i位置左边最高的柱子
+>
+>    ​					max_right[i]表示i位置右边最高的柱子
+>
+> 3. 转移方程：max_left[i] = Math.max(max_left[i - 1],height[i - 1])
+>
+>    ​					max_right[i] = Math.max(max_right[i + 1],height[i + 1])
+>
+> 4. 边界：最左边和最右边无法接雨水，所以不考虑
+>
+> 5. 计算
+
+```java
+	public int trap(int[] height) {
+        if(height == null || height.length <=3){
+            return 0;
+        }
+        int len = height.length;
+        //max_left[i]表示i位置左边最高的柱子
+        int[] max_left = new int[len];
+        //max_right[i]表示i位置右边最高的柱子
+        int[] max_right = new int[len];
+
+        //边界
+        for(int i = 1;i < len - 1;i ++){
+            max_left[i] = Math.max(max_left[i - 1],height[i - 1]);
+        }
+        for(int i = len - 2;i > 0;i --){
+            max_right[i] = Math.max(max_right[i + 1],height[i + 1]);
+        }
+
+        int sum = 0;
+        int min = 0;
+        for(int i = 1;i < len - 1;i ++){
+            min = Math.min(max_left[i],max_right[i]);
+            if(height[i] < min){
+                sum += min - height[i];
+            }
+        }
+        return sum;
     }
 ```
 
