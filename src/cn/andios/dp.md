@@ -10,7 +10,7 @@
    - 取石子游戏，先手是否必胜
    - 能不能选出k个数使得和是sum
 
-
+坐标型、序列型、划分型、区间型、背包型、最长序列型、博弈型、综合型
 
 #### 确定状态
 
@@ -26,7 +26,7 @@
 
 
 
-### [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
+#### [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
 
 > 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
 
@@ -100,7 +100,7 @@ class Solution {
 }
 ```
 
-### [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
+#### [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
 
 > 一个机器人位于一个 m(横) x n (纵)网格的左上角 。
 
@@ -160,7 +160,7 @@ class Solution {
 }
 ```
 
-### [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)
+#### [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)
 
 > 给定一个包含非负整数的 *m* x *n* 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
 
@@ -219,7 +219,7 @@ class Solution {
 }
 ```
 
-### [72. 编辑距离](https://leetcode-cn.com/problems/edit-distance/)
+#### [72. 编辑距离](https://leetcode-cn.com/problems/edit-distance/)
 
 > 给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。
 
@@ -292,7 +292,7 @@ class Solution {
 
 
 
-### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+#### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
 
 > 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
@@ -328,7 +328,7 @@ public int maxSubArray(int[] nums) {
 }
 ```
 
-### [120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/)
+#### [120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/)
 
 > 给定一个三角形，找出自顶向下的最小路径和。每一步只能移动到下一行中相邻的结点上。
 
@@ -373,11 +373,11 @@ public int maxSubArray(int[] nums) {
     }
 ```
 
-### [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+#### [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 
 > 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
 
-> 如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。
+> 如果你最多只允许完成**一笔交易**（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。
 
 > 注意：你不能在买入股票前卖出股票。
 
@@ -420,11 +420,11 @@ public int maxSubArray(int[] nums) {
     }
 ```
 
-### [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+#### [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 > 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
 >
-> 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+> 设计一个算法来计算你所能获取的最大利润。你可以**尽可能地完成更多的交易**（多次买卖一支股票）。
 >
 > 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
 
@@ -492,9 +492,34 @@ solution 2
     }
 ```
 
+#### [123. 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
+> 给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
+>
+> 设计一个算法来计算你所能获取的最大利润。你最多可以完成 **两笔 交易**。
+>
+> 注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+>
+> ```
+> 示例 1:
+> 输入: [3,3,5,0,0,3,1,4]
+> 输出: 6
+> 解释: 在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，这笔交易所能获得利润 = 3-0 = 3 。随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4-1 = 3 。
+> 示例 2:
+> 输入: [1,2,3,4,5]
+> 输出: 4
+> 解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+> 示例 3:
+> 输入: [7,6,4,3,1] 
+> 输出: 0 
+> 解释: 在这个情况下, 没有交易完成, 所以最大利润为 0。
+> ```
 
-### [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
+solution 1
+
+> 
+
+#### [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
 
 > 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
 
@@ -543,7 +568,7 @@ solution 2
     }
 ```
 
-### [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+#### [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
 
 > 给定一个无序的整数数组，找到其中最长上升子序列的长度。
 
@@ -587,7 +612,7 @@ solution 2
     }
 ```
 
-### [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
+#### [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
 
 > 给定 *n* 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
 
